@@ -73,7 +73,7 @@ void MainWindow::on_actionExit_triggered()
 
 void MainWindow::on_actionNew_triggered()
 {
-    //this->hide();
+
     Warehouse twarehouse;
     twarehouse.setModal(true);
     twarehouse.exec();

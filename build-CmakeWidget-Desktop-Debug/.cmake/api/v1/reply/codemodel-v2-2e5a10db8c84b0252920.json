@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-b6e8c1d952940b9fe2e2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "CmakeWidget",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "CmakeWidget::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CmakeWidget-Debug-f39b7a97d1bd9541c2df.json",
+					"name" : "CmakeWidget",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CmakeWidget_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CmakeWidget_autogen-Debug-9f69023502bd8c0eb419.json",
+					"name" : "CmakeWidget_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CmakeWidget_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CmakeWidget_autogen_timestamp_deps-Debug-b28d3adcf35088046a6b.json",
+					"name" : "CmakeWidget_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/jmajor/Git/Qt6Cmake/build-CmakeWidget-Desktop-Debug",
+		"source" : "/home/jmajor/Git/Qt6Cmake/CmakeWidget"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
