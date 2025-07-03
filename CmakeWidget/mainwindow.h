@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include "warehouse.h"
+#include "secdialog.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -31,7 +33,10 @@ private slots:
 
     void on_actionNew_triggered();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
+    SecDialog *secDialog;
 };
 #endif // MAINWINDOW_H

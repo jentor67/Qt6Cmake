@@ -219,6 +219,12 @@
 			null
 		],
 		[
+			"/home/jmajor/Git/Qt6Cmake/CmakeWidget/secdialog.h",
+			"MU",
+			"EWIEGA46WW/moc_secdialog.cpp",
+			null
+		],
+		[
 			"/home/jmajor/Git/Qt6Cmake/CmakeWidget/warehouse.h",
 			"MU",
 			"EWIEGA46WW/moc_warehouse.cpp",
@@ -286,6 +292,7 @@
 	[
 		[ "/home/jmajor/Git/Qt6Cmake/CmakeWidget/main.cpp", "MU", null ],
 		[ "/home/jmajor/Git/Qt6Cmake/CmakeWidget/mainwindow.cpp", "MU", null ],
+		[ "/home/jmajor/Git/Qt6Cmake/CmakeWidget/secdialog.cpp", "MU", null ],
 		[ "/home/jmajor/Git/Qt6Cmake/CmakeWidget/warehouse.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],

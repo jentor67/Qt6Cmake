@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+//#include "secdialog.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -77,5 +78,18 @@ void MainWindow::on_actionNew_triggered()
     Warehouse twarehouse;
     twarehouse.setModal(true);
     twarehouse.exec();
+}
+
+
+void MainWindow::on_pushButton_clicked()
+{
+    // SecDialog secDeialog;
+    // secDeialog.setModal(true);  // one argumant
+    // secDeialog.exec();
+
+    hide();  //hide main window
+    // Modelless approach  Allows to access parent window as well as child
+    secDialog = new SecDialog(this); // this is this class
+    secDialog->show();
 }
 

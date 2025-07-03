@@ -15,7 +15,7 @@ Warehouse::Warehouse(QWidget *parent)
     QString value = parentWindow->getValue();
     findChild<QLabel*>()->setText("Value from parent: " + value);
     */
-    QString value = MainWindow->getValue():
+    //QString value = MainWindow->getValue():
     ui->txtWarehouseDescription->setText("John"); //works
 
 }

@@ -1,7 +1,5 @@
-/home/jmajor/Git/Qt6Cmake/build-CmakeWidget-Desktop-Debug/CmakeWidget_autogen/EWIEGA46WW/moc_mainwindow.cpp: /home/jmajor/Git/Qt6Cmake/CmakeWidget/mainwindow.h \
+/home/jmajor/Git/Qt6Cmake/build-CmakeWidget-Desktop-Debug/CmakeWidget_autogen/EWIEGA46WW/moc_secdialog.cpp: /home/jmajor/Git/Qt6Cmake/CmakeWidget/secdialog.h \
   /home/jmajor/Git/Qt6Cmake/build-CmakeWidget-Desktop-Debug/CmakeWidget_autogen/moc_predefs.h \
-  /home/jmajor/Git/Qt6Cmake/CmakeWidget/secdialog.h \
-  /home/jmajor/Git/Qt6Cmake/CmakeWidget/warehouse.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -383,11 +381,8 @@
   /usr/include/qt6/QtGui/qtransform.h \
   /usr/include/qt6/QtGui/qwindowdefs.h \
   /usr/include/qt6/QtWidgets/QDialog \
-  /usr/include/qt6/QtWidgets/QMainWindow \
   /usr/include/qt6/QtWidgets/qdialog.h \
-  /usr/include/qt6/QtWidgets/qmainwindow.h \
   /usr/include/qt6/QtWidgets/qsizepolicy.h \
-  /usr/include/qt6/QtWidgets/qtabwidget.h \
   /usr/include/qt6/QtWidgets/qtwidgets-config.h \
   /usr/include/qt6/QtWidgets/qtwidgetsexports.h \
   /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \

@@ -3,6 +3,8 @@ CmakeWidget_autogen/timestamp: \
 	/home/jmajor/Git/Qt6Cmake/CmakeWidget/main.cpp \
 	/home/jmajor/Git/Qt6Cmake/CmakeWidget/mainwindow.cpp \
 	/home/jmajor/Git/Qt6Cmake/CmakeWidget/mainwindow.h \
+	/home/jmajor/Git/Qt6Cmake/CmakeWidget/secdialog.cpp \
+	/home/jmajor/Git/Qt6Cmake/CmakeWidget/secdialog.h \
 	/home/jmajor/Git/Qt6Cmake/CmakeWidget/warehouse.cpp \
 	/home/jmajor/Git/Qt6Cmake/CmakeWidget/warehouse.h \
 	/home/jmajor/Git/Qt6Cmake/build-CmakeWidget-Desktop-Debug/.qtc/package-manager/auto-setup.cmake \
@@ -545,5 +547,6 @@ CmakeWidget_autogen/timestamp: \
 	/usr/share/cmake/Modules/Platform/Linux.cmake \
 	/usr/share/cmake/Modules/Platform/UnixPaths.cmake \
 	/home/jmajor/Git/Qt6Cmake/CmakeWidget/mainwindow.ui \
+	/home/jmajor/Git/Qt6Cmake/CmakeWidget/secdialog.ui \
 	/home/jmajor/Git/Qt6Cmake/CmakeWidget/warehouse.ui \
 	/usr/bin/cmake

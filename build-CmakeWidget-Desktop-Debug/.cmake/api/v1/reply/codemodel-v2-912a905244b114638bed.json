@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-bedabb9f5a82fd57e5ad.json",
+					"jsonFile" : "directory-.-Debug-672e98f35a4b367bb32a.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "CmakeWidget::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-CmakeWidget-Debug-68877a12ab8775dc8118.json",
+					"jsonFile" : "target-CmakeWidget-Debug-ba1baf55e3f3381077cb.json",
 					"name" : "CmakeWidget",
 					"projectIndex" : 0
 				},

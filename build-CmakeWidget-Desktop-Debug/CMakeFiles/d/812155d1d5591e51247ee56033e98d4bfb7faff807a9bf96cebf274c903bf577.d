@@ -4,6 +4,9 @@ CmakeWidget_autogen/timestamp: \
   /home/jmajor/Git/Qt6Cmake/CmakeWidget/mainwindow.cpp \
   /home/jmajor/Git/Qt6Cmake/CmakeWidget/mainwindow.h \
   /home/jmajor/Git/Qt6Cmake/CmakeWidget/mainwindow.ui \
+  /home/jmajor/Git/Qt6Cmake/CmakeWidget/secdialog.cpp \
+  /home/jmajor/Git/Qt6Cmake/CmakeWidget/secdialog.h \
+  /home/jmajor/Git/Qt6Cmake/CmakeWidget/secdialog.ui \
   /home/jmajor/Git/Qt6Cmake/CmakeWidget/warehouse.cpp \
   /home/jmajor/Git/Qt6Cmake/CmakeWidget/warehouse.h \
   /home/jmajor/Git/Qt6Cmake/CmakeWidget/warehouse.ui \

@@ -48,6 +48,7 @@ public:
     QHBoxLayout *horizontalLayout_4;
     QLabel *label_3;
     QLineEdit *txtResult;
+    QPushButton *pushButton;
     QMenuBar *menubar;
     QMenu *menuFile;
     QStatusBar *statusbar;
@@ -155,10 +156,13 @@ public:
 
         horizontalLayout_4->addWidget(txtResult);
 
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName("pushButton");
+        pushButton->setGeometry(QRect(320, 220, 80, 26));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 465, 22));
+        menubar->setGeometry(QRect(0, 0, 465, 23));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName("menuFile");
         MainWindow->setMenuBar(menubar);
@@ -188,6 +192,7 @@ public:
         label->setText(QCoreApplication::translate("MainWindow", "First Number:", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Second Number:", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "Result:", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "Sec Dialog", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
     } // retranslateUi
 
