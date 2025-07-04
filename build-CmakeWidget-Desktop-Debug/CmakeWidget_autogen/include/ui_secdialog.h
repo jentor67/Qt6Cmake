@@ -12,18 +12,27 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QLabel>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_SecDialog
 {
 public:
+    QLabel *lblMessage;
 
     void setupUi(QDialog *SecDialog)
     {
         if (SecDialog->objectName().isEmpty())
             SecDialog->setObjectName("SecDialog");
         SecDialog->resize(400, 300);
+        lblMessage = new QLabel(SecDialog);
+        lblMessage->setObjectName("lblMessage");
+        lblMessage->setGeometry(QRect(60, 100, 281, 71));
+        QFont font;
+        font.setPointSize(14);
+        lblMessage->setFont(font);
+        lblMessage->setAlignment(Qt::AlignCenter);
 
         retranslateUi(SecDialog);
 
@@ -33,6 +42,7 @@ public:
     void retranslateUi(QDialog *SecDialog)
     {
         SecDialog->setWindowTitle(QCoreApplication::translate("SecDialog", "Dialog", nullptr));
+        lblMessage->setText(QCoreApplication::translate("SecDialog", "John", nullptr));
     } // retranslateUi
 
 };

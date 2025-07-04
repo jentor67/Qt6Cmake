@@ -38,5 +38,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
     SecDialog *secDialog;
+    QString dataToPass;
 };
 #endif // MAINWINDOW_H

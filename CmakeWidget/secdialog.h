@@ -12,7 +12,8 @@ class SecDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit SecDialog(QWidget *parent = nullptr);
+    explicit SecDialog(const QString &data, QWidget *parent = nullptr);
+    //ChildWindow(const QString &data, QWidget *parent = nullptr);
     ~SecDialog();
 
 private:

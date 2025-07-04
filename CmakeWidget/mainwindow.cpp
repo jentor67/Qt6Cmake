@@ -17,6 +17,13 @@ MainWindow::~MainWindow()
 
 int firstNumber, secondNumber, result;
 
+void mainWindowTitle()
+{
+   //this->setWindowTitle("My Test"); //Does not work
+   //ui->setWindowTitle("My Test"); //Does not work
+   //MainWindow.setWindowTitle("My Test"); //Does not work
+}
+
 void MainWindow::on_btnAdd_clicked()
 {
     firstNumber = ui->txtFirstNumber->text().toInt();
@@ -87,9 +94,11 @@ void MainWindow::on_pushButton_clicked()
     // secDeialog.setModal(true);  // one argumant
     // secDeialog.exec();
 
-    hide();  //hide main window
+    //hide();  //hide main window
     // Modelless approach  Allows to access parent window as well as child
-    secDialog = new SecDialog(this); // this is this class
+    //dataToPass = "Hello from Parent!";
+    dataToPass = ui->txtResult->text(); //get value of txtResult
+    secDialog = new SecDialog(dataToPass, this); // this is this class
     secDialog->show();
 }
 
