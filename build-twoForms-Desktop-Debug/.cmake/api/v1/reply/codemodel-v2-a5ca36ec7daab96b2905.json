@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-05086a182013a335574a.json",
+					"jsonFile" : "directory-.-Debug-f2dcad16b2314c9e2457.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "twoForms::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-twoForms-Debug-7ad2e8275e0b1f39b456.json",
+					"jsonFile" : "target-twoForms-Debug-552e1f57d5cfd89f20b2.json",
 					"name" : "twoForms",
 					"projectIndex" : 0
 				},

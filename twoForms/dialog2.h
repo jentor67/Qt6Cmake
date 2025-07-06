@@ -13,14 +13,7 @@ class Dialog2 : public QDialog
 
 public:
     explicit Dialog2(QWidget *parent = nullptr);
-    Dialog(QWidget *parent = nulptr, QString message = "default");
     ~Dialog2();
-
-signals:
-    void dataAvailable(const QString &date);
-
-private slots:
-    void on_pushButton_clicked();
 
 private:
     Ui::Dialog2 *ui;

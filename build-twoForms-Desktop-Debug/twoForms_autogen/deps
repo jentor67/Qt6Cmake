@@ -6,9 +6,13 @@ twoForms_autogen/timestamp: \
 	/home/jmajor/Git/Qt6Cmake/twoForms/CMakeLists.txt \
 	/home/jmajor/Git/Qt6Cmake/twoForms/dialog.cpp \
 	/home/jmajor/Git/Qt6Cmake/twoForms/dialog.h \
+	/home/jmajor/Git/Qt6Cmake/twoForms/dialog2.cpp \
+	/home/jmajor/Git/Qt6Cmake/twoForms/dialog2.h \
 	/home/jmajor/Git/Qt6Cmake/twoForms/main.cpp \
 	/home/jmajor/Git/Qt6Cmake/twoForms/mainwindow.cpp \
 	/home/jmajor/Git/Qt6Cmake/twoForms/mainwindow.h \
+	/home/jmajor/Git/Qt6Cmake/twoForms/openjson.cpp \
+	/home/jmajor/Git/Qt6Cmake/twoForms/openjson.h \
 	/usr/include/alloca.h \
 	/usr/include/asm-generic/errno-base.h \
 	/usr/include/asm-generic/errno.h \
@@ -545,5 +549,7 @@ twoForms_autogen/timestamp: \
 	/usr/share/cmake/Modules/Platform/Linux.cmake \
 	/usr/share/cmake/Modules/Platform/UnixPaths.cmake \
 	/home/jmajor/Git/Qt6Cmake/twoForms/dialog.ui \
+	/home/jmajor/Git/Qt6Cmake/twoForms/dialog2.ui \
 	/home/jmajor/Git/Qt6Cmake/twoForms/mainwindow.ui \
+	/home/jmajor/Git/Qt6Cmake/twoForms/openjson.ui \
 	/usr/bin/cmake

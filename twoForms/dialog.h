@@ -13,7 +13,9 @@ class Dialog : public QDialog
 
 public:
     explicit Dialog(QWidget *parent = nullptr);
+
     Dialog(QWidget *paraent = nullptr, QString message = "default");
+
     ~Dialog();
 
 signals:

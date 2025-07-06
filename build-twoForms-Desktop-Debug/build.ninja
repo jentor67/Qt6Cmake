@@ -81,6 +81,22 @@ build CMakeFiles/twoForms.dir/dialog.cpp.o: CXX_COMPILER__twoForms_unscanned_Deb
   OBJECT_DIR = CMakeFiles/twoForms.dir
   OBJECT_FILE_DIR = CMakeFiles/twoForms.dir
 
+build CMakeFiles/twoForms.dir/dialog2.cpp.o: CXX_COMPILER__twoForms_unscanned_Debug /home/jmajor/Git/Qt6Cmake/twoForms/dialog2.cpp || cmake_object_order_depends_target_twoForms
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/twoForms.dir/dialog2.cpp.o.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++1z -fdiagnostics-color=always
+  INCLUDES = -I/home/jmajor/Git/Qt6Cmake/build-twoForms-Desktop-Debug/twoForms_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui
+  OBJECT_DIR = CMakeFiles/twoForms.dir
+  OBJECT_FILE_DIR = CMakeFiles/twoForms.dir
+
+build CMakeFiles/twoForms.dir/openjson.cpp.o: CXX_COMPILER__twoForms_unscanned_Debug /home/jmajor/Git/Qt6Cmake/twoForms/openjson.cpp || cmake_object_order_depends_target_twoForms
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/twoForms.dir/openjson.cpp.o.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++1z -fdiagnostics-color=always
+  INCLUDES = -I/home/jmajor/Git/Qt6Cmake/build-twoForms-Desktop-Debug/twoForms_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui
+  OBJECT_DIR = CMakeFiles/twoForms.dir
+  OBJECT_FILE_DIR = CMakeFiles/twoForms.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target twoForms
@@ -89,7 +105,7 @@ build CMakeFiles/twoForms.dir/dialog.cpp.o: CXX_COMPILER__twoForms_unscanned_Deb
 #############################################
 # Link the executable twoForms
 
-build twoForms: CXX_EXECUTABLE_LINKER__twoForms_Debug CMakeFiles/twoForms.dir/twoForms_autogen/mocs_compilation.cpp.o CMakeFiles/twoForms.dir/main.cpp.o CMakeFiles/twoForms.dir/mainwindow.cpp.o CMakeFiles/twoForms.dir/dialog.cpp.o | /usr/lib64/libQt6Widgets.so.6.6.3 /usr/lib64/libQt6Gui.so.6.6.3 /usr/lib64/libQt6Core.so.6.6.3 /usr/lib64/libGLX.so /usr/lib64/libOpenGL.so || twoForms_autogen twoForms_autogen_timestamp_deps
+build twoForms: CXX_EXECUTABLE_LINKER__twoForms_Debug CMakeFiles/twoForms.dir/twoForms_autogen/mocs_compilation.cpp.o CMakeFiles/twoForms.dir/main.cpp.o CMakeFiles/twoForms.dir/mainwindow.cpp.o CMakeFiles/twoForms.dir/dialog.cpp.o CMakeFiles/twoForms.dir/dialog2.cpp.o CMakeFiles/twoForms.dir/openjson.cpp.o | /usr/lib64/libQt6Widgets.so.6.6.3 /usr/lib64/libQt6Gui.so.6.6.3 /usr/lib64/libQt6Core.so.6.6.3 /usr/lib64/libGLX.so /usr/lib64/libOpenGL.so || twoForms_autogen twoForms_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_LIBRARIES = /usr/lib64/libQt6Widgets.so.6.6.3  /usr/lib64/libQt6Gui.so.6.6.3  /usr/lib64/libQt6Core.so.6.6.3  /usr/lib64/libGLX.so  /usr/lib64/libOpenGL.so
   OBJECT_DIR = CMakeFiles/twoForms.dir
@@ -174,7 +190,7 @@ build twoForms_autogen_timestamp_deps: phony CMakeFiles/twoForms_autogen_timesta
 #############################################
 # Utility command for twoForms_autogen
 
-build twoForms_autogen: phony CMakeFiles/twoForms_autogen twoForms_autogen/include/ui_mainwindow.h twoForms_autogen/include/ui_dialog.h twoForms_autogen/timestamp twoForms_autogen/mocs_compilation.cpp twoForms_autogen_timestamp_deps
+build twoForms_autogen: phony CMakeFiles/twoForms_autogen twoForms_autogen/include/ui_mainwindow.h twoForms_autogen/include/ui_dialog.h twoForms_autogen/include/ui_dialog2.h twoForms_autogen/include/ui_openjson.h twoForms_autogen/timestamp twoForms_autogen/mocs_compilation.cpp twoForms_autogen_timestamp_deps
 
 
 #############################################
@@ -190,13 +206,13 @@ build twoForms_autogen/timestamp twoForms_autogen/mocs_compilation.cpp | ${cmake
 #############################################
 # Phony custom command for CMakeFiles/twoForms_autogen_timestamp_deps
 
-build CMakeFiles/twoForms_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/twoForms_autogen_timestamp_deps: phony /usr/lib64/libQt6Core.so.6.6.3 /usr/lib64/libQt6Widgets.so.6.6.3 /usr/lib/qt6/uic /usr/lib/qt6/moc
+build CMakeFiles/twoForms_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/twoForms_autogen_timestamp_deps: phony /usr/lib/qt6/uic /usr/lib/qt6/moc /usr/lib64/libQt6Widgets.so.6.6.3
 
 
 #############################################
 # Phony custom command for CMakeFiles/twoForms_autogen
 
-build CMakeFiles/twoForms_autogen twoForms_autogen/include/ui_mainwindow.h twoForms_autogen/include/ui_dialog.h | ${cmake_ninja_workdir}CMakeFiles/twoForms_autogen ${cmake_ninja_workdir}twoForms_autogen/include/ui_mainwindow.h ${cmake_ninja_workdir}twoForms_autogen/include/ui_dialog.h: phony twoForms_autogen/timestamp || twoForms_autogen_timestamp_deps
+build CMakeFiles/twoForms_autogen twoForms_autogen/include/ui_mainwindow.h twoForms_autogen/include/ui_dialog.h twoForms_autogen/include/ui_dialog2.h twoForms_autogen/include/ui_openjson.h | ${cmake_ninja_workdir}CMakeFiles/twoForms_autogen ${cmake_ninja_workdir}twoForms_autogen/include/ui_mainwindow.h ${cmake_ninja_workdir}twoForms_autogen/include/ui_dialog.h ${cmake_ninja_workdir}twoForms_autogen/include/ui_dialog2.h ${cmake_ninja_workdir}twoForms_autogen/include/ui_openjson.h: phony twoForms_autogen/timestamp || twoForms_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.

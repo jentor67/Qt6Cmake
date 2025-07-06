@@ -23,7 +23,11 @@ void MainWindow::on_pushButton_clicked()
     connect(myDialog, &Dialog::dataAvailable, this, &MainWindow::onDataAvailable);
 }
 
+
 void MainWindow::onDataAvailable(const QString &data)
 {
     ui->label->setText(data);
+
+    //this changes the window title
+    setWindowTitle(data);
 }

@@ -38,7 +38,7 @@ public:
         centralwidget->setObjectName("centralwidget");
         label = new QLabel(centralwidget);
         label->setObjectName("label");
-        label->setGeometry(QRect(250, 150, 201, 71));
+        label->setGeometry(QRect(60, 30, 201, 71));
         QFont font;
         font.setPointSize(14);
         label->setFont(font);

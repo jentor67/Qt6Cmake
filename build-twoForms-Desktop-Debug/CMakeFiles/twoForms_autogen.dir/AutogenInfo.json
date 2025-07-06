@@ -219,9 +219,21 @@
 			null
 		],
 		[
+			"/home/jmajor/Git/Qt6Cmake/twoForms/dialog2.h",
+			"MU",
+			"EWIEGA46WW/moc_dialog2.cpp",
+			null
+		],
+		[
 			"/home/jmajor/Git/Qt6Cmake/twoForms/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
+			null
+		],
+		[
+			"/home/jmajor/Git/Qt6Cmake/twoForms/openjson.h",
+			"MU",
+			"EWIEGA46WW/moc_openjson.cpp",
 			null
 		]
 	],
@@ -285,8 +297,10 @@
 	"SOURCES" : 
 	[
 		[ "/home/jmajor/Git/Qt6Cmake/twoForms/dialog.cpp", "MU", null ],
+		[ "/home/jmajor/Git/Qt6Cmake/twoForms/dialog2.cpp", "MU", null ],
 		[ "/home/jmajor/Git/Qt6Cmake/twoForms/main.cpp", "MU", null ],
-		[ "/home/jmajor/Git/Qt6Cmake/twoForms/mainwindow.cpp", "MU", null ]
+		[ "/home/jmajor/Git/Qt6Cmake/twoForms/mainwindow.cpp", "MU", null ],
+		[ "/home/jmajor/Git/Qt6Cmake/twoForms/openjson.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
