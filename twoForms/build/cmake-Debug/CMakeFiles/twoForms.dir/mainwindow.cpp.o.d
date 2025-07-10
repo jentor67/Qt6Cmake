@@ -405,6 +405,12 @@ CMakeFiles/twoForms.dir/mainwindow.cpp.o: \
  /opt/Qt/6.9.1/gcc_64/include/QtCore/qiodevice.h \
  /opt/Qt/6.9.1/gcc_64/include/QtGui/qtextdocument.h \
  /opt/Qt/6.9.1/gcc_64/include/QtCore/qurl.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtWidgets/QLineEdit \
+ /opt/Qt/6.9.1/gcc_64/include/QtWidgets/qlineedit.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtGui/qtextcursor.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtGui/qtextformat.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtGui/qpen.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtGui/qtextoption.h \
  /opt/Qt/6.9.1/gcc_64/include/QtWidgets/QMainWindow \
  /opt/Qt/6.9.1/gcc_64/include/QtWidgets/QMenuBar \
  /opt/Qt/6.9.1/gcc_64/include/QtWidgets/qmenubar.h \
@@ -414,8 +420,61 @@ CMakeFiles/twoForms.dir/mainwindow.cpp.o: \
  /opt/Qt/6.9.1/gcc_64/include/QtWidgets/qabstractbutton.h \
  /opt/Qt/6.9.1/gcc_64/include/QtWidgets/QStatusBar \
  /opt/Qt/6.9.1/gcc_64/include/QtWidgets/qstatusbar.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtWidgets/QTextEdit \
+ /opt/Qt/6.9.1/gcc_64/include/QtWidgets/qtextedit.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtWidgets/qabstractscrollarea.h \
  /opt/Qt/6.9.1/gcc_64/include/QtWidgets/QWidget \
  /opt/Qt/6.9.1/gcc_64/include/QtWidgets/qwidget.h \
  /home/jmajor/Git/Qt6Cmake/twoForms/dialog.h \
  /opt/Qt/6.9.1/gcc_64/include/QtWidgets/QDialog \
- /opt/Qt/6.9.1/gcc_64/include/QtWidgets/qdialog.h
+ /opt/Qt/6.9.1/gcc_64/include/QtWidgets/qdialog.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtWidgets/QFileDialog \
+ /opt/Qt/6.9.1/gcc_64/include/QtWidgets/qfiledialog.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtCore/qdir.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtCore/qdirlisting.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtCore/qfiledevice.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtCore/qdatetime.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtCore/qcalendar.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtCore/qfile.h \
+ /usr/include/c++/11/filesystem /usr/include/c++/11/bits/fs_fwd.h \
+ /usr/include/c++/11/bits/fs_path.h /usr/include/c++/11/locale \
+ /usr/include/c++/11/bits/locale_facets.h /usr/include/c++/11/cwctype \
+ /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h \
+ /usr/include/c++/11/bits/locale_facets.tcc \
+ /usr/include/c++/11/bits/locale_facets_nonio.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/11/bits/codecvt.h \
+ /usr/include/c++/11/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/11/bits/locale_conv.h /usr/include/c++/11/iomanip \
+ /usr/include/c++/11/bits/quoted_string.h /usr/include/c++/11/sstream \
+ /usr/include/c++/11/istream /usr/include/c++/11/ios \
+ /usr/include/c++/11/bits/basic_ios.h \
+ /usr/include/c++/11/bits/basic_ios.tcc /usr/include/c++/11/ostream \
+ /usr/include/c++/11/bits/ostream.tcc \
+ /usr/include/c++/11/bits/istream.tcc \
+ /usr/include/c++/11/bits/sstream.tcc /usr/include/c++/11/codecvt \
+ /usr/include/c++/11/bits/fs_dir.h /usr/include/c++/11/bits/fs_ops.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtCore/qfileinfo.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtCore/qtimezone.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtWidgets/qdialog.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtWidgets/QMessageBox \
+ /opt/Qt/6.9.1/gcc_64/include/QtWidgets/qmessagebox.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtCore/QJsonDocument \
+ /opt/Qt/6.9.1/gcc_64/include/QtCore/qjsondocument.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtCore/qjsonparseerror.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtCore/QJsonObject \
+ /opt/Qt/6.9.1/gcc_64/include/QtCore/qjsonobject.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtCore/qjsonvalue.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtCore/qcborvalue.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtCore/qcborcommon.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtCore/qregularexpression.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtCore/quuid.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtCore/qjsondocument.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtCore/QJsonArray \
+ /opt/Qt/6.9.1/gcc_64/include/QtCore/qjsonarray.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtCore/QDebug \
+ /opt/Qt/6.9.1/gcc_64/include/QtCore/qdebug.h

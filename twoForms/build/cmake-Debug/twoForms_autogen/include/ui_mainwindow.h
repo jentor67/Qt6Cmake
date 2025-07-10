@@ -12,10 +12,12 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -26,6 +28,14 @@ public:
     QWidget *centralwidget;
     QLabel *label;
     QPushButton *pushButton;
+    QLabel *lblOpenFile;
+    QPushButton *btnPickTextFile;
+    QLineEdit *txtTextFile;
+    QTextEdit *txtTextFileBody;
+    QTextEdit *txtJSONBody;
+    QLabel *lblOpenJSONFile;
+    QLineEdit *txtJSONPath;
+    QPushButton *btnPickJSONFile;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -33,23 +43,53 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(629, 553);
+        MainWindow->resize(630, 584);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         label = new QLabel(centralwidget);
         label->setObjectName("label");
-        label->setGeometry(QRect(60, 30, 201, 71));
+        label->setGeometry(QRect(70, 10, 201, 41));
         QFont font;
         font.setPointSize(14);
         label->setFont(font);
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(250, 250, 171, 81));
+        pushButton->setGeometry(QRect(320, 10, 171, 41));
         pushButton->setFont(font);
+        lblOpenFile = new QLabel(centralwidget);
+        lblOpenFile->setObjectName("lblOpenFile");
+        lblOpenFile->setGeometry(QRect(51, 71, 124, 34));
+        QFont font1;
+        font1.setPointSize(11);
+        lblOpenFile->setFont(font1);
+        btnPickTextFile = new QPushButton(centralwidget);
+        btnPickTextFile->setObjectName("btnPickTextFile");
+        btnPickTextFile->setGeometry(QRect(182, 71, 123, 34));
+        btnPickTextFile->setFont(font1);
+        txtTextFile = new QLineEdit(centralwidget);
+        txtTextFile->setObjectName("txtTextFile");
+        txtTextFile->setGeometry(QRect(50, 110, 511, 28));
+        txtTextFileBody = new QTextEdit(centralwidget);
+        txtTextFileBody->setObjectName("txtTextFileBody");
+        txtTextFileBody->setGeometry(QRect(50, 150, 511, 141));
+        txtJSONBody = new QTextEdit(centralwidget);
+        txtJSONBody->setObjectName("txtJSONBody");
+        txtJSONBody->setGeometry(QRect(48, 379, 511, 141));
+        lblOpenJSONFile = new QLabel(centralwidget);
+        lblOpenJSONFile->setObjectName("lblOpenJSONFile");
+        lblOpenJSONFile->setGeometry(QRect(49, 300, 124, 34));
+        lblOpenJSONFile->setFont(font1);
+        txtJSONPath = new QLineEdit(centralwidget);
+        txtJSONPath->setObjectName("txtJSONPath");
+        txtJSONPath->setGeometry(QRect(48, 339, 511, 28));
+        btnPickJSONFile = new QPushButton(centralwidget);
+        btnPickJSONFile->setObjectName("btnPickJSONFile");
+        btnPickJSONFile->setGeometry(QRect(180, 300, 123, 34));
+        btnPickJSONFile->setFont(font1);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 629, 23));
+        menubar->setGeometry(QRect(0, 0, 630, 26));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -65,6 +105,10 @@ public:
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "Open Dialog", nullptr));
+        lblOpenFile->setText(QCoreApplication::translate("MainWindow", "Open Text File:", nullptr));
+        btnPickTextFile->setText(QCoreApplication::translate("MainWindow", "Pick Text File", nullptr));
+        lblOpenJSONFile->setText(QCoreApplication::translate("MainWindow", "Open JSON File:", nullptr));
+        btnPickJSONFile->setText(QCoreApplication::translate("MainWindow", "Pick JSON File", nullptr));
     } // retranslateUi
 
 };
