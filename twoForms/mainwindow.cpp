@@ -59,38 +59,6 @@ void MainWindow::on_btnPickTextFile_clicked()
     }
 }
 
-bool readJsonFile1(const QString& filePath) {
-    QFile file(filePath);
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        qWarning() << "Failed to open file:" << file.errorString();
-        return false;
-    }
-
-    QByteArray jsonData = file.readAll();
-    file.close();
-
-    QJsonParseError parseError;
-    QJsonDocument doc = QJsonDocument::fromJson(jsonData, &parseError);
-
-    if (parseError.error != QJsonParseError::NoError) {
-        qWarning() << "Parse error at" << parseError.offset << ":" << parseError.errorString();
-        return false;
-    }
-
-    if (doc.isObject()) {
-        QJsonObject jsonObject = doc.object();
-        // Process the JSON object
-        // Example:
-        if (jsonObject.contains("name") && jsonObject["name"].isString()) {
-            QString name = jsonObject["name"].toString();
-            qDebug() << "Name:" << name;
-        }
-    } else if (doc.isArray()) {
-        QJsonArray jsonArray = doc.array();
-        // Process the JSON array
-    }
-    return true;
-}
 
 
 void MainWindow::on_btnPickJSONFile_clicked()
@@ -124,6 +92,18 @@ void MainWindow::on_btnPickJSONFile_clicked()
                     QString name = jsonObject["name"].toString();
                     qDebug() << "Name:" << name;
                 }
+
+
+                // get 'description'
+                if (jsonObject.contains("description") && jsonObject["description"].isString()) {
+                    QString description = jsonObject["description"].toString();
+                    qDebug() << "Description:" << description;
+                }
+                else{
+                    qDebug() << "No match for Description";
+                }
+
+
             } else if (doc.isArray()) {
                 QJsonArray jsonArray = doc.array();
                 // Process the JSON array
