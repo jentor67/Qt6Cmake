@@ -103,6 +103,36 @@ void MainWindow::on_btnPickJSONFile_clicked()
     if (!fileName.isEmpty()) {
         QFile file(fileName);
         if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+
+            //read as a json file
+            QByteArray jsonData = file.readAll();
+
+            file.close();
+            QJsonParseError parseError;
+            QJsonDocument doc = QJsonDocument::fromJson(jsonData, &parseError);
+
+            if (parseError.error != QJsonParseError::NoError) {
+                qWarning() << "Parse error at" << parseError.offset << ":" << parseError.errorString();
+                //return false;
+            }
+
+            if (doc.isObject()) {
+                QJsonObject jsonObject = doc.object();
+                // Process the JSON object
+                // Example:
+                if (jsonObject.contains("name") && jsonObject["name"].isString()) {
+                    QString name = jsonObject["name"].toString();
+                    qDebug() << "Name:" << name;
+                }
+            } else if (doc.isArray()) {
+                QJsonArray jsonArray = doc.array();
+                // Process the JSON array
+            }
+
+
+
+            // read as a text file
+            file.open(QIODevice::ReadOnly | QIODevice::Text);
             QTextStream in(&file);
             QString content = in.readAll();
             ui->txtJSONPath->setText(fileName);

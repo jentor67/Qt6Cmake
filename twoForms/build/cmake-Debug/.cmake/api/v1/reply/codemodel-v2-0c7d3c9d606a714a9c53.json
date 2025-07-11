@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f2dcad16b2314c9e2457.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "twoForms",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "twoForms::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-twoForms-Debug-ba1bfd4d84633be9c714.json",
+					"name" : "twoForms",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "twoForms_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-twoForms_autogen-Debug-40098b087cf132ec1652.json",
+					"name" : "twoForms_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "twoForms_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-twoForms_autogen_timestamp_deps-Debug-ae24f31d524c8dd5fe14.json",
+					"name" : "twoForms_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/jmajor/Git/Qt6Cmake/twoForms/build/cmake-Debug",
+		"source" : "/home/jmajor/Git/Qt6Cmake/twoForms"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
