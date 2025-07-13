@@ -36,6 +36,7 @@ public:
     QLabel *lblOpenJSONFile;
     QLineEdit *txtJSONPath;
     QPushButton *btnPickJSONFile;
+    QLabel *lblPicture;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -86,10 +87,13 @@ public:
         btnPickJSONFile->setObjectName("btnPickJSONFile");
         btnPickJSONFile->setGeometry(QRect(180, 300, 123, 34));
         btnPickJSONFile->setFont(font1);
+        lblPicture = new QLabel(centralwidget);
+        lblPicture->setObjectName("lblPicture");
+        lblPicture->setGeometry(QRect(10, 30, 54, 17));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 630, 26));
+        menubar->setGeometry(QRect(0, 0, 630, 22));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -109,6 +113,7 @@ public:
         btnPickTextFile->setText(QCoreApplication::translate("MainWindow", "Pick Text File", nullptr));
         lblOpenJSONFile->setText(QCoreApplication::translate("MainWindow", "Open JSON File:", nullptr));
         btnPickJSONFile->setText(QCoreApplication::translate("MainWindow", "Pick JSON File", nullptr));
+        lblPicture->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
     } // retranslateUi
 
 };

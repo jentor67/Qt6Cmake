@@ -162,6 +162,19 @@
      <string>Pick JSON File</string>
     </property>
    </widget>
+   <widget class="QLabel" name="lblPicture">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>54</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -169,7 +182,7 @@
      <x>0</x>
      <y>0</y>
      <width>630</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

@@ -484,4 +484,6 @@ CMakeFiles/twoForms.dir/mainwindow.cpp.o: \
  /opt/Qt/6.9.1/gcc_64/include/QtCore/QJsonArray \
  /opt/Qt/6.9.1/gcc_64/include/QtCore/qjsonarray.h \
  /opt/Qt/6.9.1/gcc_64/include/QtCore/QDebug \
- /opt/Qt/6.9.1/gcc_64/include/QtCore/qdebug.h
+ /opt/Qt/6.9.1/gcc_64/include/QtCore/qdebug.h \
+ /opt/Qt/6.9.1/gcc_64/include/QtGui/QPixmap \
+ /opt/Qt/6.9.1/gcc_64/include/QtGui/qpixmap.h

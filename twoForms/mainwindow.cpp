@@ -7,12 +7,16 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QDebug>
+#include <QPixmap>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QPixmap pix("/home/jmajor/Git/Qt6Cmake/twoForms/Images/Warehouse.png");
+    ui->lblPicture->setPixmap(pix);
+
 }
 
 MainWindow::~MainWindow()
