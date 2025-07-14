@@ -1,0 +1,25 @@
+{
+	"BUILD_DIR" : "/home/jmajor/Git/Qt6Cmake/twoForms/build/cmake-Debug/twoForms_autogen",
+	"CMAKE_BINARY_DIR" : "/home/jmajor/Git/Qt6Cmake/twoForms/build/cmake-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/jmajor/Git/Qt6Cmake/twoForms/build/cmake-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/jmajor/Git/Qt6Cmake/twoForms",
+	"CMAKE_SOURCE_DIR" : "/home/jmajor/Git/Qt6Cmake/twoForms",
+	"GENERATOR" : "Unix Makefiles",
+	"INCLUDE_DIR" : "/home/jmajor/Git/Qt6Cmake/twoForms/build/cmake-Debug/twoForms_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/jmajor/Git/Qt6Cmake/twoForms/Images/TextFile.png",
+		"/home/jmajor/Git/Qt6Cmake/twoForms/Images/jsonfile.jpeg",
+		"/home/jmajor/Git/Qt6Cmake/twoForms/Images/Warehouse.png"
+	],
+	"LOCK_FILE" : "/home/jmajor/Git/Qt6Cmake/twoForms/build/cmake-Debug/CMakeFiles/twoForms_autogen.dir/AutoRcc_resource_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "resource" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_resource.cpp",
+	"RCC_EXECUTABLE" : "/opt/Qt/6.9.1/gcc_64/libexec/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/jmajor/Git/Qt6Cmake/twoForms/build/cmake-Debug/CMakeFiles/twoForms_autogen.dir/AutoRcc_resource_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/jmajor/Git/Qt6Cmake/twoForms/resource.qrc",
+	"VERBOSITY" : 0
+}

@@ -31,7 +31,7 @@
 			"/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake",
 			"build/cmake-Debug/.qtc/package-manager/maintenance_tool_provider.cmake",
 			"/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6/FindWrapOpenGL.cmake",
-			"/opt/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake",
+			"/usr/share/cmake-3.28/Modules/CMakeFindDependencyMacro.cmake",
 			"/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
 			"/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake",
 			"/opt/Qt/6.9.1/gcc_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake",
@@ -69,13 +69,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 66,
+				"line" : 67,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 49,
+				"line" : 50,
 				"parent" : 0
 			},
 			{
@@ -206,7 +206,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always"
+					"fragment" : "-g -std=gnu++17 -fdiagnostics-color=always"
 				},
 				{
 					"backtrace" : 28,
@@ -277,7 +277,8 @@
 				2,
 				6,
 				9,
-				12
+				12,
+				20
 			]
 		}
 	],
@@ -311,7 +312,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-DQT_QML_DEBUG -g",
+				"fragment" : "-g",
 				"role" : "flags"
 			},
 			{
@@ -367,7 +368,8 @@
 				2,
 				6,
 				9,
-				12
+				12,
+				20
 			]
 		},
 		{
@@ -378,10 +380,10 @@
 				5,
 				8,
 				11,
-				14,
 				15,
 				16,
-				17
+				17,
+				18
 			]
 		},
 		{
@@ -395,17 +397,25 @@
 			]
 		},
 		{
+			"name" : "Resources",
+			"sourceIndexes" : 
+			[
+				14
+			]
+		},
+		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				18
+				19
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				19
+				21,
+				22
 			]
 		}
 	],
@@ -489,6 +499,11 @@
 			"sourceGroupIndex" : 2
 		},
 		{
+			"backtrace" : 4,
+			"path" : "resource.qrc",
+			"sourceGroupIndex" : 3
+		},
+		{
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/cmake-Debug/twoForms_autogen/include/ui_mainwindow.h",
@@ -516,13 +531,26 @@
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/cmake-Debug/twoForms_autogen/timestamp",
-			"sourceGroupIndex" : 3
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/cmake-Debug/twoForms_autogen/EWIEGA46WW/qrc_resource.cpp",
+			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/cmake-Debug/twoForms_autogen/timestamp.rule",
-			"sourceGroupIndex" : 4
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/cmake-Debug/twoForms_autogen/EWIEGA46WW/qrc_resource.cpp.rule",
+			"sourceGroupIndex" : 5
 		}
 	],
 	"type" : "EXECUTABLE"

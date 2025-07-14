@@ -26,6 +26,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         dialog.h dialog.cpp dialog.ui
         dialog2.h dialog2.cpp dialog2.ui
         openjson.h openjson.cpp openjson.ui
+        resource.qrc
 
     )
 # Define target properties for Android with Qt 6 as:

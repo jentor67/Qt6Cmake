@@ -26,6 +26,8 @@ private slots:
 
     void on_btnPickJSONFile_clicked();
 
+    void on_actionExit_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

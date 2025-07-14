@@ -12,10 +12,13 @@ file(REMOVE_RECURSE
   "CMakeFiles/twoForms.dir/mainwindow.cpp.o.d"
   "CMakeFiles/twoForms.dir/openjson.cpp.o"
   "CMakeFiles/twoForms.dir/openjson.cpp.o.d"
+  "CMakeFiles/twoForms.dir/twoForms_autogen/EWIEGA46WW/qrc_resource.cpp.o"
+  "CMakeFiles/twoForms.dir/twoForms_autogen/EWIEGA46WW/qrc_resource.cpp.o.d"
   "CMakeFiles/twoForms.dir/twoForms_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/twoForms.dir/twoForms_autogen/mocs_compilation.cpp.o.d"
   "twoForms"
   "twoForms.pdb"
+  "twoForms_autogen/EWIEGA46WW/qrc_resource.cpp"
   "twoForms_autogen/mocs_compilation.cpp"
   "twoForms_autogen/timestamp"
 )

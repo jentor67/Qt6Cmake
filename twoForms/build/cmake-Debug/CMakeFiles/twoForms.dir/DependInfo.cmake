@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/jmajor/Git/Qt6Cmake/twoForms/main.cpp" "CMakeFiles/twoForms.dir/main.cpp.o" "gcc" "CMakeFiles/twoForms.dir/main.cpp.o.d"
   "/home/jmajor/Git/Qt6Cmake/twoForms/mainwindow.cpp" "CMakeFiles/twoForms.dir/mainwindow.cpp.o" "gcc" "CMakeFiles/twoForms.dir/mainwindow.cpp.o.d"
   "/home/jmajor/Git/Qt6Cmake/twoForms/openjson.cpp" "CMakeFiles/twoForms.dir/openjson.cpp.o" "gcc" "CMakeFiles/twoForms.dir/openjson.cpp.o.d"
+  "/home/jmajor/Git/Qt6Cmake/twoForms/build/cmake-Debug/twoForms_autogen/EWIEGA46WW/qrc_resource.cpp" "CMakeFiles/twoForms.dir/twoForms_autogen/EWIEGA46WW/qrc_resource.cpp.o" "gcc" "CMakeFiles/twoForms.dir/twoForms_autogen/EWIEGA46WW/qrc_resource.cpp.o.d"
   "/home/jmajor/Git/Qt6Cmake/twoForms/build/cmake-Debug/twoForms_autogen/mocs_compilation.cpp" "CMakeFiles/twoForms.dir/twoForms_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/twoForms.dir/twoForms_autogen/mocs_compilation.cpp.o.d"
   )
 

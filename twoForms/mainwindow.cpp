@@ -14,8 +14,13 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QPixmap pix("/home/jmajor/Git/Qt6Cmake/twoForms/Images/Warehouse.png");
-    ui->lblPicture->setPixmap(pix);
+    // QPixmap pix("/home/jmajor/Git/Qt6Cmake/twoForms/Images/Warehouse.png");
+    // ui->lblPicture->setPixmap(pix);
+
+    // QLabel *label = new QLabel();
+    // QPixmap pixmap(":/images/my_image.png"); // Using the prefix
+    // // or QPixmap pixmap(":/assets/my_image.png"); if no prefix was used
+    // label->setPixmap(pixmap);
 
 }
 
@@ -126,5 +131,11 @@ void MainWindow::on_btnPickJSONFile_clicked()
             QMessageBox::warning(this, tr("Error"), tr("Could not open file: %1").arg(file.errorString()));
         }
     }
+}
+
+
+void MainWindow::on_actionExit_triggered()
+{
+    close();
 }
 
