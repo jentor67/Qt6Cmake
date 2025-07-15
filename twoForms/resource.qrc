@@ -1,7 +1,9 @@
 <RCC>
-    <qresource prefix="/Images">
-        <file>Images/Warehouse.png</file>
+    <qresource prefix="/emoji">
         <file>Images/TextFile.png</file>
         <file>Images/jsonfile.jpeg</file>
+    </qresource>
+    <qresource prefix="/logo">
+        <file>Images/Warehouse.png</file>
     </qresource>
 </RCC>
