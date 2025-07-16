@@ -10,7 +10,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "twoForms_autogen/timestamp" "custom" "twoForms_autogen/deps"
   "/home/jmajor/Git/Qt6Cmake/twoForms/dialog.cpp" "CMakeFiles/twoForms.dir/dialog.cpp.o" "gcc" "CMakeFiles/twoForms.dir/dialog.cpp.o.d"
-  "/home/jmajor/Git/Qt6Cmake/twoForms/dialog2.cpp" "CMakeFiles/twoForms.dir/dialog2.cpp.o" "gcc" "CMakeFiles/twoForms.dir/dialog2.cpp.o.d"
   "/home/jmajor/Git/Qt6Cmake/twoForms/main.cpp" "CMakeFiles/twoForms.dir/main.cpp.o" "gcc" "CMakeFiles/twoForms.dir/main.cpp.o.d"
   "/home/jmajor/Git/Qt6Cmake/twoForms/mainwindow.cpp" "CMakeFiles/twoForms.dir/mainwindow.cpp.o" "gcc" "CMakeFiles/twoForms.dir/mainwindow.cpp.o.d"
   "/home/jmajor/Git/Qt6Cmake/twoForms/openjson.cpp" "CMakeFiles/twoForms.dir/openjson.cpp.o" "gcc" "CMakeFiles/twoForms.dir/openjson.cpp.o.d"

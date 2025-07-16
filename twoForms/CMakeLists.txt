@@ -2,6 +2,13 @@ cmake_minimum_required(VERSION 3.5)
 
 project(twoForms VERSION 0.1 LANGUAGES CXX)
 
+
+# Define a variable for the resources directory
+set(RESOURCES_DIR "${CMAKE_SOURCE_DIR}/data")
+
+# Configure a header file to make the path available in C++
+configure_file(mainwindow.h in mainwindow.h)
+
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -24,7 +31,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         dialog.h dialog.cpp dialog.ui
-        dialog2.h dialog2.cpp dialog2.ui
+
         openjson.h openjson.cpp openjson.ui
         resource.qrc
 

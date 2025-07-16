@@ -391,8 +391,6 @@ CMakeFiles/twoForms.dir/twoForms_autogen/mocs_compilation.cpp.o: \
  /opt/Qt/6.9.1/gcc_64/include/QtCore/qtmocconstants.h \
  /opt/Qt/6.9.1/gcc_64/include/QtCore/q20algorithm.h \
  /opt/Qt/6.9.1/gcc_64/include/QtCore/q23type_traits.h \
- /home/jmajor/Git/Qt6Cmake/twoForms/build/cmake-Debug/twoForms_autogen/EWIEGA46WW/moc_dialog2.cpp \
- /home/jmajor/Git/Qt6Cmake/twoForms/build/cmake-Debug/twoForms_autogen/EWIEGA46WW/../../../../dialog2.h \
  /home/jmajor/Git/Qt6Cmake/twoForms/build/cmake-Debug/twoForms_autogen/EWIEGA46WW/moc_mainwindow.cpp \
  /home/jmajor/Git/Qt6Cmake/twoForms/build/cmake-Debug/twoForms_autogen/EWIEGA46WW/../../../../mainwindow.h \
  /opt/Qt/6.9.1/gcc_64/include/QtWidgets/QMainWindow \

@@ -5,7 +5,7 @@
 
 
 #pragma once
-#define RESOURCES_PATH "@RESOURCES_DIR@"
+#define RESOURCES_PATH "/home/jmajor/Git/Qt6Cmake/twoForms/data"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

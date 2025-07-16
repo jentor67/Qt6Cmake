@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-96924c7499d9c7746fa3.json",
+					"jsonFile" : "directory-.-Debug-1f545f6d50b405ff3108.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "twoForms::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-twoForms-Debug-cae3f471c10c55fac38c.json",
+					"jsonFile" : "target-twoForms-Debug-2590cd874f8ef8fa8567.json",
 					"name" : "twoForms",
 					"projectIndex" : 0
 				},
@@ -58,7 +58,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "twoForms_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-twoForms_autogen_timestamp_deps-Debug-ae24f31d524c8dd5fe14.json",
+					"jsonFile" : "target-twoForms_autogen_timestamp_deps-Debug-a212cb8411d48dd43b18.json",
 					"name" : "twoForms_autogen_timestamp_deps",
 					"projectIndex" : 0
 				}
@@ -74,6 +74,6 @@
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 7
+		"minor" : 6
 	}
 }

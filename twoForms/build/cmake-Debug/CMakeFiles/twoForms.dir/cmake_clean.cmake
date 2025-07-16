@@ -4,8 +4,6 @@ file(REMOVE_RECURSE
   "twoForms_autogen"
   "CMakeFiles/twoForms.dir/dialog.cpp.o"
   "CMakeFiles/twoForms.dir/dialog.cpp.o.d"
-  "CMakeFiles/twoForms.dir/dialog2.cpp.o"
-  "CMakeFiles/twoForms.dir/dialog2.cpp.o.d"
   "CMakeFiles/twoForms.dir/main.cpp.o"
   "CMakeFiles/twoForms.dir/main.cpp.o.d"
   "CMakeFiles/twoForms.dir/mainwindow.cpp.o"
