@@ -78,9 +78,17 @@ twoForms_autogen/timestamp: CMakeFiles/twoForms.dir/compiler_depend.ts
 
 twoForms_autogen/EWIEGA46WW/qrc_resource.cpp: /home/jmajor/Git/Qt6Cmake/twoForms/resource.qrc
 twoForms_autogen/EWIEGA46WW/qrc_resource.cpp: CMakeFiles/twoForms_autogen.dir/AutoRcc_resource_EWIEGA46WW_Info.json
+twoForms_autogen/EWIEGA46WW/qrc_resource.cpp: /home/jmajor/Git/Qt6Cmake/twoForms/data/text/drivelayout.txt
 twoForms_autogen/EWIEGA46WW/qrc_resource.cpp: /home/jmajor/Git/Qt6Cmake/twoForms/Images/Warehouse.png
 twoForms_autogen/EWIEGA46WW/qrc_resource.cpp: /home/jmajor/Git/Qt6Cmake/twoForms/Images/TextFile.png
 twoForms_autogen/EWIEGA46WW/qrc_resource.cpp: /home/jmajor/Git/Qt6Cmake/twoForms/Images/jsonfile.jpeg
+twoForms_autogen/EWIEGA46WW/qrc_resource.cpp: /home/jmajor/Git/Qt6Cmake/twoForms/data/json/crosstown.json
+twoForms_autogen/EWIEGA46WW/qrc_resource.cpp: /home/jmajor/Git/Qt6Cmake/twoForms/data/json/data1.json
+twoForms_autogen/EWIEGA46WW/qrc_resource.cpp: /home/jmajor/Git/Qt6Cmake/twoForms/data/json/pti_ep.json
+twoForms_autogen/EWIEGA46WW/qrc_resource.cpp: /home/jmajor/Git/Qt6Cmake/twoForms/data/json/schema.json
+twoForms_autogen/EWIEGA46WW/qrc_resource.cpp: /home/jmajor/Git/Qt6Cmake/twoForms/data/json/test.json
+twoForms_autogen/EWIEGA46WW/qrc_resource.cpp: /home/jmajor/Git/Qt6Cmake/twoForms/data/json/data.json
+twoForms_autogen/EWIEGA46WW/qrc_resource.cpp: /home/jmajor/Git/Qt6Cmake/twoForms/data/json/test1.json
 twoForms_autogen/EWIEGA46WW/qrc_resource.cpp: /opt/Qt/6.9.1/gcc_64/libexec/rcc
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/jmajor/Git/Qt6Cmake/twoForms/build/cmake-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic RCC for resource.qrc"
 	/usr/bin/cmake -E cmake_autorcc /home/jmajor/Git/Qt6Cmake/twoForms/build/cmake-Debug/CMakeFiles/twoForms_autogen.dir/AutoRcc_resource_EWIEGA46WW_Info.json Debug

@@ -67,8 +67,8 @@ include CMakeFiles/twoForms_autogen_timestamp_deps.dir/compiler_depend.make
 include CMakeFiles/twoForms_autogen_timestamp_deps.dir/progress.make
 
 CMakeFiles/twoForms_autogen_timestamp_deps: /opt/Qt/6.9.1/gcc_64/libexec/uic
-CMakeFiles/twoForms_autogen_timestamp_deps: /opt/Qt/6.9.1/gcc_64/libexec/moc
 CMakeFiles/twoForms_autogen_timestamp_deps: /opt/Qt/6.9.1/gcc_64/lib/libQt6Widgets.so.6.9.1
+CMakeFiles/twoForms_autogen_timestamp_deps: /opt/Qt/6.9.1/gcc_64/libexec/moc
 
 twoForms_autogen_timestamp_deps: CMakeFiles/twoForms_autogen_timestamp_deps
 twoForms_autogen_timestamp_deps: CMakeFiles/twoForms_autogen_timestamp_deps.dir/build.make

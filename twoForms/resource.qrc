@@ -6,4 +6,16 @@
     <qresource prefix="/logo">
         <file>Images/Warehouse.png</file>
     </qresource>
+    <qresource prefix="/TextFiles">
+        <file>data/text/drivelayout.txt</file>
+    </qresource>
+    <qresource prefix="/JSONFiles">
+        <file>data/json/crosstown.json</file>
+        <file>data/json/data.json</file>
+        <file>data/json/data1.json</file>
+        <file>data/json/pti_ep.json</file>
+        <file>data/json/schema.json</file>
+        <file>data/json/test.json</file>
+        <file>data/json/test1.json</file>
+    </qresource>
 </RCC>

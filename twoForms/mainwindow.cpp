@@ -42,8 +42,24 @@ void MainWindow::onDataAvailable(const QString &data)
 
 void MainWindow::on_btnPickTextFile_clicked()
 {
-    QString initialPath = QString::fromLocal8Bit(RESOURCES_PATH);
+    //QString initialPath = QString::fromLocal8Bit(RESOURCES_PATH);
+    //qDebug() << initialPath;  //this is the build directory
+
+    qDebug() << QDir::currentPath();
+
+    QString initialPath = ":/TextFiles/";
     qDebug() << initialPath;
+
+
+    /*
+     QFileDialog::getOpenFileName(
+        this,
+        tr("Open Image"),
+        "images/",
+        tr("Image Files (*.png *.jpg *.bmp)")).
+     */
+
+
 
     QString fileName = QFileDialog::getOpenFileName(
         this,
