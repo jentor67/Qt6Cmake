@@ -4,7 +4,8 @@
 	"CMAKE_CURRENT_BINARY_DIR" : "/home/jmajor/Git/Qt6Cmake/twoForms/build/cmake-Debug",
 	"CMAKE_CURRENT_SOURCE_DIR" : "/home/jmajor/Git/Qt6Cmake/twoForms",
 	"CMAKE_SOURCE_DIR" : "/home/jmajor/Git/Qt6Cmake/twoForms",
-	"GENERATOR" : "Unix Makefiles",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
 	"INCLUDE_DIR" : "/home/jmajor/Git/Qt6Cmake/twoForms/build/cmake-Debug/twoForms_autogen/include",
 	"INPUTS" : 
 	[
@@ -29,5 +30,6 @@
 	"RCC_LIST_OPTIONS" : [ "--list" ],
 	"SETTINGS_FILE" : "/home/jmajor/Git/Qt6Cmake/twoForms/build/cmake-Debug/CMakeFiles/twoForms_autogen.dir/AutoRcc_resource_EWIEGA46WW_Used.txt",
 	"SOURCE" : "/home/jmajor/Git/Qt6Cmake/twoForms/resource.qrc",
+	"USE_BETTER_GRAPH" : true,
 	"VERBOSITY" : 0
 }

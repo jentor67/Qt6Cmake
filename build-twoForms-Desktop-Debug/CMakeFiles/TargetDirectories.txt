@@ -1,9 +1,0 @@
-/home/jmajor/Git/Qt6Cmake/build-twoForms-Desktop-Debug/CMakeFiles/twoForms.dir
-/home/jmajor/Git/Qt6Cmake/build-twoForms-Desktop-Debug/CMakeFiles/edit_cache.dir
-/home/jmajor/Git/Qt6Cmake/build-twoForms-Desktop-Debug/CMakeFiles/rebuild_cache.dir
-/home/jmajor/Git/Qt6Cmake/build-twoForms-Desktop-Debug/CMakeFiles/list_install_components.dir
-/home/jmajor/Git/Qt6Cmake/build-twoForms-Desktop-Debug/CMakeFiles/install.dir
-/home/jmajor/Git/Qt6Cmake/build-twoForms-Desktop-Debug/CMakeFiles/install/local.dir
-/home/jmajor/Git/Qt6Cmake/build-twoForms-Desktop-Debug/CMakeFiles/install/strip.dir
-/home/jmajor/Git/Qt6Cmake/build-twoForms-Desktop-Debug/CMakeFiles/twoForms_autogen_timestamp_deps.dir
-/home/jmajor/Git/Qt6Cmake/build-twoForms-Desktop-Debug/CMakeFiles/twoForms_autogen.dir

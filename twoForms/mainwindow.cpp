@@ -42,31 +42,16 @@ void MainWindow::onDataAvailable(const QString &data)
 
 void MainWindow::on_btnPickTextFile_clicked()
 {
-    //QString initialPath = QString::fromLocal8Bit(RESOURCES_PATH);
-    //qDebug() << initialPath;  //this is the build directory
-
-    qDebug() << QDir::currentPath();
-
-    QString initialPath = ":/TextFiles/";
+    QString initialPath = QDir::currentPath();
+    initialPath += "/../../data/text";
     qDebug() << initialPath;
-
-
-    /*
-     QFileDialog::getOpenFileName(
-        this,
-        tr("Open Image"),
-        "images/",
-        tr("Image Files (*.png *.jpg *.bmp)")).
-     */
-
-
 
     QString fileName = QFileDialog::getOpenFileName(
         this,
         tr("Open Text File"),
         initialPath,
         tr("Text Files (*.txt);;All Files (*.*)"));
-    //"/home/jmajor/temp",
+
 
     if (!fileName.isEmpty()) {
         QFile file(fileName);
@@ -89,10 +74,15 @@ void MainWindow::on_btnPickTextFile_clicked()
 
 void MainWindow::on_btnPickJSONFile_clicked()
 {
+
+    QString initialPath = QDir::currentPath();
+    initialPath += "/../../data/json";
+    qDebug() << initialPath;
+
     QString fileName = QFileDialog::getOpenFileName(
         this,
         tr("Open Text File"),
-        "/home/jmajor/temp",
+        initialPath,
         tr("Text Files (*.json);;All Files (*.*)"));
 
     if (!fileName.isEmpty()) {
