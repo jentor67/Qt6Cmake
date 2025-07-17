@@ -28,7 +28,12 @@ void MainWindow::on_pushButton_clicked()
     Dialog* myDialog = new Dialog(this,"Hello!");
     myDialog->show();
 
-    connect(myDialog, &Dialog::dataAvailable, this, &MainWindow::onDataAvailable);
+    connect(
+        myDialog,
+        &Dialog::dataAvailable,
+        this,
+        &MainWindow::onDataAvailable
+    );
 }
 
 
@@ -108,6 +113,7 @@ void MainWindow::on_btnPickJSONFile_clicked()
                 if (jsonObject.contains("name") && jsonObject["name"].isString()) {
                     QString name = jsonObject["name"].toString();
                     qDebug() << "Name:" << name;
+                    onDataAvailable(name);
                 }
 
 

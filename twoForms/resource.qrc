@@ -2,6 +2,8 @@
     <qresource prefix="/emoji">
         <file>Images/TextFile.png</file>
         <file>Images/jsonfile.jpeg</file>
+        <file>Images/json1</file>
+        <file>Images/json2.webp</file>
     </qresource>
     <qresource prefix="/logo">
         <file>Images/Warehouse.png</file>

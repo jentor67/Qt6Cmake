@@ -8,9 +8,12 @@ Dialog::Dialog(QWidget *parent, QString message) :
     ui->setupUi(this);
     ui->label->setText(message);
 
-    connect(this, &Dialog::finished, this, [this](){
-        emit dataAvailable("meow");
-    });
+    connect(
+        this,
+        &Dialog::finished,
+        this,
+        [this](){emit dataAvailable("meow");}
+    );
 }
 
 Dialog::~Dialog()

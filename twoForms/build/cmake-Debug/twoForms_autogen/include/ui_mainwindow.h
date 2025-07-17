@@ -103,7 +103,7 @@ public:
         lblJSON = new QLabel(centralwidget);
         lblJSON->setObjectName("lblJSON");
         lblJSON->setGeometry(QRect(50, 300, 31, 31));
-        lblJSON->setPixmap(QPixmap(QString::fromUtf8(":/emoji/Images/jsonfile.jpeg")));
+        lblJSON->setPixmap(QPixmap(QString::fromUtf8(":/emoji/Images/json1")));
         lblJSON->setScaledContents(true);
         lblTextFile = new QLabel(centralwidget);
         lblTextFile->setObjectName("lblTextFile");
@@ -113,7 +113,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 630, 22));
+        menubar->setGeometry(QRect(0, 0, 630, 26));
         menuExit = new QMenu(menubar);
         menuExit->setObjectName("menuExit");
         MainWindow->setMenuBar(menubar);

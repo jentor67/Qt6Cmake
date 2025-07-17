@@ -25,7 +25,6 @@ void onDataAvailable(const QString &data);
 private slots:
     void on_pushButton_clicked();
 
-
     void on_btnPickTextFile_clicked();
 
     void on_btnPickJSONFile_clicked();
