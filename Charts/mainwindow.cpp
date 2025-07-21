@@ -1,5 +1,10 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include <QtCharts/QChartView>
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QChart>
+// ... other Qt Charts classes as needed
+
 // #include "QBarSet"
 // #include "QBarSeries"
 // #include "QChart"
@@ -30,19 +35,24 @@ MainWindow::MainWindow(QWidget *parent)
     chart->legend()->hide();
     chart->addSeries(series);
     chart->createDefaultAxes();
-    chart->axes(Qt::Vertical).first()->setRange(0,22);
+    chart->axes(Qt::Vertical).first()->setRange(0,12);
     chart->axes(Qt::Horizontal).first()->setRange(0,11);
     chart->setVisible(true);
 
-    QChartView *chartview = new QChartView(chart);
-    chartview->setRenderHint(QPainter::Antialiasing);
-    chartview->setVisible(true);
+    ui->graphicsView->setChart(chart);
 
-    //setCentralWidget(chartview);
+    QChart *chart1 = new QChart();
+    QLineSeries *series1 = new QLineSeries();
+    series1->append(0, 6);
+    series1->append(2, 4);
+    series1->append(3, 8);
+    series1->append(7, 4);
+    series1->append(10, 5);
+    chart1->addSeries(series1);
+    chart1->setTitle("Simple Line Chart");
+    chart1->createDefaultAxes();
 
-    QGraphicsScene *scene = new QGraphicsScene();
-    scene->addItem(chart);
-
+    ui->graphicsView_2->setChart(chart1);
 
 }
 
