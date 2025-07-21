@@ -16,7 +16,7 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
-     <widget class="QChartView" name="graphicsView_2">
+     <widget class="QChartView" name="graphicsView_3">
       <property name="maximumSize">
        <size>
         <width>250</width>
@@ -26,7 +26,40 @@
      </widget>
     </item>
     <item>
-     <widget class="QChartView" name="graphicsView">
+     <widget class="QChartView" name="graphicsView_4">
+      <property name="maximumSize">
+       <size>
+        <width>250</width>
+        <height>250</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Orientation::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QChartView" name="graphicsView_1">
+      <property name="maximumSize">
+       <size>
+        <width>250</width>
+        <height>250</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QChartView" name="graphicsView_2">
       <property name="maximumSize">
        <size>
         <width>250</width>
@@ -43,7 +76,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
