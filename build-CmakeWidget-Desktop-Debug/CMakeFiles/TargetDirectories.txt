@@ -1,9 +1,0 @@
-/home/jmajor/Git/Qt6Cmake/build-CmakeWidget-Desktop-Debug/CMakeFiles/CmakeWidget.dir
-/home/jmajor/Git/Qt6Cmake/build-CmakeWidget-Desktop-Debug/CMakeFiles/edit_cache.dir
-/home/jmajor/Git/Qt6Cmake/build-CmakeWidget-Desktop-Debug/CMakeFiles/rebuild_cache.dir
-/home/jmajor/Git/Qt6Cmake/build-CmakeWidget-Desktop-Debug/CMakeFiles/list_install_components.dir
-/home/jmajor/Git/Qt6Cmake/build-CmakeWidget-Desktop-Debug/CMakeFiles/install.dir
-/home/jmajor/Git/Qt6Cmake/build-CmakeWidget-Desktop-Debug/CMakeFiles/install/local.dir
-/home/jmajor/Git/Qt6Cmake/build-CmakeWidget-Desktop-Debug/CMakeFiles/install/strip.dir
-/home/jmajor/Git/Qt6Cmake/build-CmakeWidget-Desktop-Debug/CMakeFiles/CmakeWidget_autogen_timestamp_deps.dir
-/home/jmajor/Git/Qt6Cmake/build-CmakeWidget-Desktop-Debug/CMakeFiles/CmakeWidget_autogen.dir
