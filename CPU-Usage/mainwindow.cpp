@@ -16,7 +16,14 @@ MainWindow::MainWindow(QWidget *parent)
 
     int cpus =  processBash(command).trimmed().toInt();  //remove \n and convert to integer
 
-    qDebug() << cpus;
+    ui->lblCPUSValue->setText(QString::number(cpus));
+
+    //qDebug() << cpus;
+
+    //ui->txtBrwCORES->append(text);
+    QString text;
+
+    text = "CPU Core Load\n";
 
     QString str1 = "echo 100 - $(mpstat -P ";
     QString str2 = " | tail -1 | awk \'{print $13}\') | bc";
@@ -24,9 +31,14 @@ MainWindow::MainWindow(QWidget *parent)
     for ( int i = 0 ; i < cpus; ++i) {
         QString strNumber = QString::number(i);
         command =  str1 + strNumber + str2;
-        qDebug() << processBash(command).trimmed().toFloat();
+        QString strLoad = processBash(command).trimmed();
+        //qDebug() << processBash(command).trimmed().toFloat();
+        text.append(strNumber);
+        text.append('\t');
+        text.append(strLoad);
+        text.append('\n');
     }
-
+    ui->txtBrwCORES->append(text);
 }
 
 QString MainWindow::processBash(QString command) {
