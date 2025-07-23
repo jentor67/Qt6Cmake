@@ -13,13 +13,20 @@ MainWindow::MainWindow(QWidget *parent)
     QString command;
     // Get the number of CPU's
     command = "lscpu | grep \"^CPU(s):\" | awk '{print $2}'";
-    qDebug() << processBash(command);
 
-    command = "echo 100 - $(mpstat -P 0 | tail -1 | awk \'{print $13}\') | bc";
-    qDebug() << processBash(command);
+    int cpus =  processBash(command).trimmed().toInt();  //remove \n and convert to integer
 
-    command = "echo 100 - $(mpstat -P 1 | tail -1 | awk \'{print $13}\') | bc";
-    qDebug()  << processBash(command);
+    qDebug() << cpus;
+
+    QString str1 = "echo 100 - $(mpstat -P ";
+    QString str2 = " | tail -1 | awk \'{print $13}\') | bc";
+
+    for ( int i = 0 ; i < cpus; ++i) {
+        QString strNumber = QString::number(i);
+        command =  str1 + strNumber + str2;
+        qDebug() << processBash(command).trimmed().toFloat();
+    }
+
 }
 
 QString MainWindow::processBash(QString command) {
