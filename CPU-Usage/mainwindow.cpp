@@ -28,17 +28,46 @@ MainWindow::MainWindow(QWidget *parent)
     QString str1 = "echo 100 - $(mpstat -P ";
     QString str2 = " | tail -1 | awk \'{print $13}\') | bc";
 
+
+    // add title to Vertical Core and Load
+    QLabel *labelNumberTitle = new QLabel();
+    labelNumberTitle->setText("Core");
+    labelNumberTitle->setStyleSheet("background-color:red;");
+    labelNumberTitle->setAlignment(Qt::AlignCenter);
+
+
+
+    ui->VerticalCore->addWidget(labelNumberTitle);
+
+    QLabel *labelLoadTitle = new QLabel();
+    labelLoadTitle->setText("Load");
+    labelLoadTitle->setStyleSheet("background-color:red;");
+    labelLoadTitle->setAlignment(Qt::AlignCenter);
+    ui->VerticalLoad->addWidget(labelLoadTitle);
+
+
     for ( int i = 0 ; i < cpus; ++i) {
         QString strNumber = QString::number(i);
         command =  str1 + strNumber + str2;
         QString strLoad = processBash(command).trimmed();
-        //qDebug() << processBash(command).trimmed().toFloat();
-        text.append(strNumber);
-        text.append('\t');
-        text.append(strLoad);
-        text.append('\n');
+
+        QLabel *labelNumber =  new QLabel();
+        labelNumber->setText(strNumber);
+        labelNumber->setIndent(20);
+        ui->VerticalCore->addWidget(labelNumber);
+
+        QLabel *labelLoad = new QLabel();
+        labelLoad->setText(strLoad);
+        labelLoad->setIndent(20);
+        ui->VerticalLoad->addWidget(labelLoad);
+
     }
-    ui->txtBrwCORES->append(text);
+
+    // Add a stretchable space
+    ui->VerticalCore->addStretch();
+    ui->VerticalLoad->addStretch();
+
+
 }
 
 QString MainWindow::processBash(QString command) {

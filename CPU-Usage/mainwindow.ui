@@ -14,23 +14,13 @@
    <string>CPU Usage</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTextBrowser" name="txtBrwCORES">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>110</y>
-      <width>451</width>
-      <height>381</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>60</x>
       <y>30</y>
-      <width>127</width>
-      <height>23</height>
+      <width>173</width>
+      <height>27</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -40,11 +30,18 @@
         <font>
          <family>Liberation Sans</family>
          <pointsize>11</pointsize>
-         <bold>true</bold>
+         <bold>false</bold>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(51, 255, 238);
+background-color: rgb(6, 37, 48);
+border-style: solid;
+border-width: 2px; /* Sets the border thickness to 2 pixels */
+border-color: rgb(255, 0, 0);</string>
+       </property>
        <property name="text">
-        <string>CPU's:</string>
+        <string>Number of CPUs:</string>
        </property>
       </widget>
      </item>
@@ -61,6 +58,24 @@
         <string/>
        </property>
       </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>110</y>
+      <width>141</width>
+      <height>401</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="HorizontalCore">
+     <item>
+      <layout class="QVBoxLayout" name="VerticalCore"/>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="VerticalLoad"/>
      </item>
     </layout>
    </widget>
