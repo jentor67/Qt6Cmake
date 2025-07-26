@@ -9,6 +9,11 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    /*CustomWidget widget;
+    widget.setWindowTitle("QStyle Simple Example");
+    widget.resize(1000, 100);
+    widget.show();*/
+
 
     QString command;
     // Get the number of CPU's
@@ -69,6 +74,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 }
+
 
 QString MainWindow::processBash(QString command) {
 

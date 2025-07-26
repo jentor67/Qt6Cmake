@@ -1,11 +1,11 @@
 #include "mainwindow.h"
 
+
 #include <QApplication>
 #include <QWidget>
 #include <QStyle>
 #include <QPainter>
 #include <QStyleOptionButton>
-
 
 
 class CustomWidget : public QWidget
@@ -31,35 +31,19 @@ protected:
 };
 
 
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
 
+    //MainWindow w;
+    //w.show();
 
     CustomWidget widget;
     widget.setWindowTitle("QStyle Simple Example");
     widget.resize(1000, 100);
     widget.show();
 
+
     return a.exec();
 }
-
-
- // For drawing button-like elements
-
-
-
-/*
-int main(int argc, char *argv[])
-{
-    QApplication a(argc, argv);
-
-    CustomWidget widget;
-    widget.setWindowTitle("QStyle Simple Example");
-    widget.resize(100, 100);
-    widget.show();
-
-    return a.exec();
-} */
