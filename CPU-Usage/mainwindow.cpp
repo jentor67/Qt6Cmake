@@ -2,6 +2,11 @@
 #include "./ui_mainwindow.h"
 #include "QDebug"
 #include "QProcess"
+#include "QPainter"
+#include "QStyle"
+#include "QStyleOptionButton"
+
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -9,10 +14,6 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    /*CustomWidget widget;
-    widget.setWindowTitle("QStyle Simple Example");
-    widget.resize(1000, 100);
-    widget.show();*/
 
 
     QString command;
@@ -73,7 +74,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->VerticalLoad->addStretch();
 
 
+
 }
+
+
 
 
 QString MainWindow::processBash(QString command) {
