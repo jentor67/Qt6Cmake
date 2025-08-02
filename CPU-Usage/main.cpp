@@ -3,7 +3,14 @@
 #include <QApplication>
 #include <QWidget>
 #include <QVBoxLayout>
-#include "MyButton.h"
+//#include "MyButton.h"
+
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QStyleFactory>
+#include <QtWidgets/QStyleOptionButton>
+#include <QtGui/QPainter>
+#include "QProxyStyle"
 
 
 
@@ -13,20 +20,9 @@ int main(int argc, char *argv[])
 
     MainWindow w;
 
-    QVBoxLayout *layout = new QVBoxLayout(&w);
-
-
-    MyButton *myButton = new MyButton("Click Me!", &w);
-    layout->addWidget(myButton);
-
-    QObject::connect(myButton, &MyButton::customClicked, [](){
-             qDebug() << "Custom clicked signal received!";
-         });
+    //a.setStyle(new MyCustomStyle()); // Set the custom style for the application
 
     w.show();
-
-
-
 
 
     return a.exec();

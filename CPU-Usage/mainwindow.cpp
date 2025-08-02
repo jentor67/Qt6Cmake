@@ -5,6 +5,9 @@
 #include "QPainter"
 #include "QStyle"
 #include "QStyleOptionButton"
+#include "MyButton.h"
+#include "QWidget"
+
 
 
 
@@ -14,6 +17,17 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+
+
+    //qApp->setStyle(new MyCustomStyleJohn());
+
+
+    // Add button
+    MyButton *myButton = new MyButton("Click Me!",this); //wrong
+    myButton->setStyleSheet("QPushButton { background-color: lightblue; color: navy; border: 2px solid darkblue; border-radius: 5px; padding: 5px; }"
+                         "QPushButton:hover { background-color: lightcyan; }"
+                         "QPushButton:pressed { background-color: steelblue; }");
+    ui->vlB1->addWidget(myButton);
 
 
     QString command;
@@ -40,7 +54,6 @@ MainWindow::MainWindow(QWidget *parent)
     labelNumberTitle->setText("Core");
     labelNumberTitle->setStyleSheet("background-color:red;");
     labelNumberTitle->setAlignment(Qt::AlignCenter);
-
 
 
     ui->VerticalCore->addWidget(labelNumberTitle);
@@ -72,7 +85,6 @@ MainWindow::MainWindow(QWidget *parent)
     // Add a stretchable space
     ui->VerticalCore->addStretch();
     ui->VerticalLoad->addStretch();
-
 
 
 }
@@ -115,4 +127,12 @@ void MainWindow::on_actionExit_triggered()
 {
     close();
 }
+
+
+// void MainWindow::on_horizontalSlider_sliderMoved(int position)
+// {
+//     QObject::connect(ui->horizontalSlider, ui->horizontalSlider->value() , ui->spinBox, ui->spinBox->value() );
+//     //emit sender->actionPerformed();
+//     emit ui->horizontalSlider->value();
+// }
 
