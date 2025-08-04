@@ -8,39 +8,32 @@
 #include "QPainter"
 #include "QPainterPath"
 #include "QStyleOptionButton"
+#include "QStyle"
 
 
-
-class MyCustomStyleJohn : public QProxyStyle
+/*
+void MyCustomStyle::drawPrimitive(
+    PrimitiveElement element,
+    const QStyleOption *option,
+    QPainter *painter,
+    const QWidget *widget) const
 {
-public:
-
-
-    // In your custom style class
-    void drawPrimitive(
-        PrimitiveElement element,
-        const QStyleOption* option,
-        QPainter* painter,
-        const QWidget* widget) const
-    {
-        if (element == PE_PanelButtonCommand) {
-            const QStyleOptionButton* buttonOption = qstyleoption_cast<const QStyleOptionButton*>(option);
-            if (buttonOption) {
-                // Draw custom button background (e.g., a rounded rectangle)
-                painter->setRenderHint(QPainter::Antialiasing);
-                QPainterPath path;
-                path.addRoundedRect(buttonOption->rect, 10, 10);
-                painter->fillPath(path, buttonOption->palette.button());
-
-                // Draw button text and icon using the base style's implementation
-                // or further customize
-                drawControl(CE_PushButtonLabel, buttonOption, painter, widget);
-            }
-        } else {
-            QProxyStyle::drawPrimitive(element, option, painter, widget); // Fallback to base style
+    // Example: Custom drawing for a button background
+    if (element == PE_PanelButtonCommand) {
+        const QStyleOptionButton *buttonOption = qstyleoption_cast<const QStyleOptionButton *>(option);
+        if (buttonOption) {
+            // Draw a custom button background based on its state (pressed, hovered, etc.)
+            painter->setBrush(Qt::blue); // Example: always blue
+            painter->drawRect(option->rect);
         }
+    } else {
+        // Fallback to the base style for other elements
+        //QStyle::drawPrimitive(element, option, painter, widget);
+//        QStyle::drawPrimitive(element, option, painter, widget);
     }
-};
+}
+*/
+
 
 
 

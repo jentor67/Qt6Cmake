@@ -19,17 +19,24 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
-    //qApp->setStyle(new MyCustomStyleJohn());
-
-
-    // Add button
-    MyButton *myButton = new MyButton("Click Me!",this); //wrong
+    // Add button to vertical box vlB1
+    MyButton *myButton = new MyButton("Click Me!",this);
     myButton->setStyleSheet("QPushButton { background-color: lightblue; color: navy; border: 2px solid darkblue; border-radius: 5px; padding: 5px; }"
                          "QPushButton:hover { background-color: lightcyan; }"
                          "QPushButton:pressed { background-color: steelblue; }");
     ui->vlB1->addWidget(myButton);
+    // ###################################
+
+    // Add button to vertical box vlB1
+    MyButton *myButtonHitme = new MyButton("Hit ME!",this);
+    myButtonHitme->setStyleSheet("QPushButton { background-color: lightblue; color: navy; border: 2px solid darkblue; border-radius: 5px; padding: 5px; }"
+                            "QPushButton:hover { background-color: lightcyan; }"
+                            "QPushButton:pressed { background-color: steelblue; }");
+    ui->vlB1->addWidget(myButtonHitme);
+    // ###################################
 
 
+    // ############ CPU parts#######################
     QString command;
     // Get the number of CPU's
     command = "lscpu | grep \"^CPU(s):\" | awk '{print $2}'";
@@ -85,6 +92,7 @@ MainWindow::MainWindow(QWidget *parent)
     // Add a stretchable space
     ui->VerticalCore->addStretch();
     ui->VerticalLoad->addStretch();
+    //#####################################################
 
 
 }
@@ -129,10 +137,5 @@ void MainWindow::on_actionExit_triggered()
 }
 
 
-// void MainWindow::on_horizontalSlider_sliderMoved(int position)
-// {
-//     QObject::connect(ui->horizontalSlider, ui->horizontalSlider->value() , ui->spinBox, ui->spinBox->value() );
-//     //emit sender->actionPerformed();
-//     emit ui->horizontalSlider->value();
-// }
+
 

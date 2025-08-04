@@ -1,13 +1,8 @@
-    // MyButton.cpp
+// MyButton.cpp
 #include "MyButton.h"
 #include <QDebug>
 #include <QMouseEvent>
 
-#include <QtWidgets/QApplication>
-#include <QtWidgets/QPushButton>
-#include <QtWidgets/QStyleFactory>
-#include <QtWidgets/QStyleOptionButton>
-#include <QtGui/QPainter>
 
 MyButton::MyButton(const QString &text, QWidget *parent)
     : QPushButton(text, parent)
