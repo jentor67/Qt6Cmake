@@ -11,23 +11,29 @@
 #include <QtGui/QPainter>
 #include "QProxyStyle"
 #include "QSpinBox"
-
+#include <QPainter>
+#include <QPaintEvent>
+#include "mycustomstyle.h"
 
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    // Apply the custom style globally
-    //a.setStyle(new MyCustomStyleJohn());
+
+
+    // Create an instance of your custom style
+    MyCustomStyle *customStyle = new MyCustomStyle(a.style());
+    a.setStyle(customStyle); // Set it as the application style
+
+    // QPushButton button("Click Me");
+
+
 
 
     MainWindow w;
 
-
-
-    //a.setStyle(new MyCustomStyle()); // Set the custom style for the application
-
     w.show();
+
 
 
     return a.exec();

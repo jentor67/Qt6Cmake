@@ -7,7 +7,8 @@
 #include "QStyleOptionButton"
 #include "MyButton.h"
 #include "QWidget"
-
+#include <QPainter>
+#include <QPaintEvent>
 
 
 
@@ -17,7 +18,10 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+  //  QPushButton johnbutton("Click Me");
+    QPushButton *anotherButton = new QPushButton("Another Button", nullptr); // No parent
 
+    ui->vlB1->addWidget(anotherButton);
 
     // Add button to vertical box vlB1
     MyButton *myButton = new MyButton("Click Me!",this);

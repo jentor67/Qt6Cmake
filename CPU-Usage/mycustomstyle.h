@@ -1,25 +1,19 @@
 #ifndef MYCUSTOMSTYLE_H
 #define MYCUSTOMSTYLE_H
-#include "QProxyStyle"
-#include "QStyle"
+#include <QProxyStyle>
+#include <QPainter>
+#include <QStyleOptionButton>
 
-
-class MyCustomStyle : public QStyle
+class MyCustomStyle : public QProxyStyle
 {
     Q_OBJECT
-
 public:
+    explicit MyCustomStyle(QStyle *style = nullptr);
 
-    public:
-        MyCustomStyle() {}
-        ~MyCustomStyle() {}
-
-        void drawPrimitive(PrimitiveElement element, const QStyleOption *option,
-                           QPainter *painter, const QWidget *widget = nullptr) const override;
-        void drawControl(ControlElement element, const QStyleOption *option,
-                         QPainter *painter, const QWidget *widget = nullptr) const override;
-        // ... other overrides for complex controls, sub-elements, etc.
-    };
+    void drawControl(ControlElement element, const QStyleOption *option,
+                     QPainter *painter, const QWidget *widget = nullptr) const override;
+};
+//     };
 
 
 #endif // MYCUSTOMSTYLE_H

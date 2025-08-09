@@ -95,8 +95,8 @@ border-color: rgb(255, 0, 0);</string>
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>260</y>
+      <x>580</x>
+      <y>230</y>
       <width>160</width>
       <height>251</height>
      </rect>
@@ -239,6 +239,22 @@ border-color: rgb(255, 0, 0);</string>
      </property>
     </widget>
    </widget>
+   <widget class="QFrame" name="painterFrame">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>300</y>
+      <width>291</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -246,7 +262,7 @@ border-color: rgb(255, 0, 0);</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
