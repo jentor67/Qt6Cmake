@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "./ui_mainwindow.h"
 
 #include "QLabel"
 #include "QTextEdit"
@@ -9,7 +10,10 @@
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
 {
+    ui->setupUi(this);
+
     // 1. Create a QWidget to act as the central container
     QWidget *centralWidget = new QWidget(this);
 
@@ -38,8 +42,9 @@ MainWindow::MainWindow(QWidget *parent)
     // 5. Set the QWidget as the central widget of the QMainWindow
     setCentralWidget(centralWidget);
 
-    setWindowTitle("My Qt6 Application");
-    resize(800, 600);
 }
 
-//MainWindow::~MainWindow() {}
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
