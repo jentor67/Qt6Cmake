@@ -14,33 +14,52 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    // 1. Create a QWidget to act as the central container
-    QWidget *centralWidget = new QWidget(this);
+    // the right side
+    // 1. Create a QWidget to put into v1layout
+    QWidget *rightWidget = new QWidget(this);
 
-    // 2. Create your desired layout into centralWidget
-    auto outer = new QVBoxLayout(centralWidget);
+    // 2. Create your desired layout into leftWidget
+    auto outer = new QVBoxLayout(rightWidget);
 
     auto noteLabel = new QLabel("Note:");
     outer->addWidget(noteLabel);
+    //ui->vlayout->addWidget(noteLabel);
 
     auto noteEdit = new QTextEdit;
     outer->addWidget(noteEdit);
 
-    auto inner = new QHBoxLayout;
-    outer->addLayout(inner);
+    // place widget rightWidget into ui->v1layout
+    ui->v1layout->addWidget(rightWidget);
 
 
-    auto clearButton = new QPushButton("Clear");
-    inner->addWidget(clearButton);
 
-    auto saveButton = new QPushButton("Save");
-    inner->addWidget(saveButton);
+    // the left side
+    // create a QWidget to act put into v2layout
+    QWidget *leftWidget = new QWidget(this);
 
-    // 4. Set the layout on the central widget
-    centralWidget->setLayout(outer);
+    // place widget leftWidget into v2layout
+    ui->v2layout->addWidget(leftWidget);
 
-    // 5. Set the QWidget as the central widget of the QMainWindow
-    setCentralWidget(centralWidget);
+    // create QVBoxLayout outerLeft and make the parent leftWidget
+    auto outerLeft = new QVBoxLayout(leftWidget);
+
+    // add clearButton to outerLeft
+    auto clearButton = new QPushButton("Clear"); //create button
+    clearButton->setFixedSize(100, 50);
+    outerLeft->addWidget(clearButton);  // add to outerLeft layout
+
+
+    // add saveButton to outerLeft
+    auto saveButton = new QPushButton("Save"); // create button
+    saveButton->setFixedSize(50,100);
+    outerLeft->addWidget(saveButton); // add to outerLeft layout
+
+
+
+    //outerLeft->setContentsMargins(0, 0, 0, 0);
+
+
+
 
 }
 
