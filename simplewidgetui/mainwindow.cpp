@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "johnbutton.h"
 
 #include "QLabel"
 #include "QTextEdit"
@@ -36,6 +37,8 @@ MainWindow::MainWindow(QWidget *parent)
     // the left side
     // create a QWidget to act put into v2layout
     QWidget *leftWidget = new QWidget(this);
+    //color the leftWidget
+    leftWidget->setStyleSheet("border: 2px solid red; background-color: lightblue;");
 
     // place widget leftWidget into v2layout
     ui->v2layout->addWidget(leftWidget);
@@ -46,13 +49,28 @@ MainWindow::MainWindow(QWidget *parent)
     // add clearButton to outerLeft
     auto clearButton = new QPushButton("Clear"); //create button
     clearButton->setFixedSize(100, 50);
+    clearButton->setStyleSheet("border: 2px solid blue; background-color: red;");
     outerLeft->addWidget(clearButton);  // add to outerLeft layout
 
 
     // add saveButton to outerLeft
     auto saveButton = new QPushButton("Save"); // create button
     saveButton->setFixedSize(50,100);
-    outerLeft->addWidget(saveButton); // add to outerLeft layout
+    //outerLeft->addWidget(saveButton); // add to outerLeft layout
+
+    johnbutton creator;
+
+
+    QPushButton* myButton1 = creator.createButton("John B1", leftWidget);
+    outerLeft->addWidget(myButton1);
+
+    QPushButton* myButton2 = creator.createButton("John B2", leftWidget);
+    outerLeft->addWidget(myButton2);
+
+
+
+
+    ui->v2layout->addWidget(saveButton);
 
 
 
