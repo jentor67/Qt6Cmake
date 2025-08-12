@@ -17,10 +17,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     // the right side
     // 1. Create a QWidget to put into v1layout
-    QWidget *rightWidget = new QWidget(this);
+    QWidget *leftWidget = new QWidget(this);
 
     // 2. Create your desired layout into leftWidget
-    auto outer = new QVBoxLayout(rightWidget);
+    auto outer = new QVBoxLayout(leftWidget);
 
     auto noteLabel = new QLabel("Note:");
     outer->addWidget(noteLabel);
@@ -30,47 +30,66 @@ MainWindow::MainWindow(QWidget *parent)
     outer->addWidget(noteEdit);
 
     // place widget rightWidget into ui->v1layout
-    ui->v1layout->addWidget(rightWidget);
+    ui->v1layout->addWidget(leftWidget);
 
 
 
-    // the left side
-    // create a QWidget to act put into v2layout
-    QWidget *leftWidget = new QWidget(this);
-    //color the leftWidget
-    leftWidget->setStyleSheet("border: 2px solid red; background-color: lightblue;");
+    QWidget *horWidget = new QWidget(this);
+    horWidget->setStyleSheet("border: 4px solid yellow; background-color: black;");
+    auto horLayout = new QHBoxLayout(horWidget);
 
-    // place widget leftWidget into v2layout
-    ui->v2layout->addWidget(leftWidget);
+    ui->v2layout->addWidget(horWidget);
 
-    // create QVBoxLayout outerLeft and make the parent leftWidget
-    auto outerLeft = new QVBoxLayout(leftWidget);
+    QWidget *redWidget = new QWidget(this);
+    redWidget->setStyleSheet("border: 2px solid red; background-color: lightblue;");
+    auto redVLayout = new QVBoxLayout(redWidget);
 
-    // add clearButton to outerLeft
-    auto clearButton = new QPushButton("Clear"); //create button
-    clearButton->setFixedSize(100, 50);
-    clearButton->setStyleSheet("border: 2px solid blue; background-color: red;");
-    outerLeft->addWidget(clearButton);  // add to outerLeft layout
+    QWidget *blueWidget = new QWidget(this);
+    blueWidget->setStyleSheet("border: 2px solid blue; background-color: lightblue;");
+    auto blueVLayout = new QVBoxLayout(blueWidget);
+
+    //Add blue and red widgets to horLayout
+    horLayout->addWidget(redWidget);
+    horLayout->addWidget(blueWidget);
 
 
-    // add saveButton to outerLeft
-    auto saveButton = new QPushButton("Save"); // create button
-    saveButton->setFixedSize(50,100);
-    //outerLeft->addWidget(saveButton); // add to outerLeft layout
-
+    // create buttons
     johnbutton creator;
 
 
-    QPushButton* myButton1 = creator.createButton("John B1", leftWidget);
-    outerLeft->addWidget(myButton1);
+    QPushButton* myButton1 = creator.createButton("John R1", redWidget);
+    redVLayout->addWidget(myButton1);
 
-    QPushButton* myButton2 = creator.createButton("John B2", leftWidget);
-    outerLeft->addWidget(myButton2);
+    QPushButton* myButton2 = creator.createButton("John R2", redWidget);
+    redVLayout->addWidget(myButton2);
+
+    QPushButton* myButton3 = creator.createButton("John B1", blueWidget);
+    blueVLayout->addWidget(myButton3);
+
+    QPushButton* myButton4 = creator.createButton("John B2", blueWidget);
+    blueVLayout->addWidget(myButton4);
+
+    // add clearButton to outerRight
+    // auto clearButton = new QPushButton("Clear"); //create button
+    // clearButton->setFixedSize(100, 50);
+    // clearButton->setStyleSheet("border: 2px solid blue; background-color: red;");
+    // outerRight->addWidget(clearButton);  // add to outerLeft layout
+
+
+    // add saveButton to outerLeft
+    // auto saveButton = new QPushButton("Save"); // create button
+    // saveButton->setFixedSize(50,100);
+    //outerLeft->addWidget(saveButton); // add to outerLeft layout
 
 
 
 
-    ui->v2layout->addWidget(saveButton);
+
+
+
+
+
+    //ui->v2layout->addWidget(saveButton);
 
 
 
