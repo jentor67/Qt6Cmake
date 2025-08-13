@@ -43,10 +43,13 @@ MainWindow::MainWindow(QWidget *parent)
     QWidget *redWidget = new QWidget(this);
     redWidget->setStyleSheet("border: 2px solid red; background-color: lightblue;");
     auto redVLayout = new QVBoxLayout(redWidget);
+    redVLayout->setAlignment(Qt::AlignTop);
 
     QWidget *blueWidget = new QWidget(this);
-    blueWidget->setStyleSheet("border: 2px solid blue; background-color: lightblue;");
+    blueWidget->setStyleSheet("border: 2px solid blue; background-color: #F58B76;");
     auto blueVLayout = new QVBoxLayout(blueWidget);
+    blueVLayout->setAlignment(Qt::AlignTop);
+
 
     //Add blue and red widgets to horLayout
     horLayout->addWidget(redWidget);
@@ -57,16 +60,16 @@ MainWindow::MainWindow(QWidget *parent)
     johnbutton creator;
 
 
-    QPushButton* myButton1 = creator.createButton("John R1", redWidget);
+    QPushButton* myButton1 = creator.createRedButton("John R1", redWidget);
     redVLayout->addWidget(myButton1);
 
-    QPushButton* myButton2 = creator.createButton("John R2", redWidget);
+    QPushButton* myButton2 = creator.createRedButton("John R2", redWidget);
     redVLayout->addWidget(myButton2);
 
-    QPushButton* myButton3 = creator.createButton("John B1", blueWidget);
+    QPushButton* myButton3 = creator.createBlueButton("John B1", blueWidget);
     blueVLayout->addWidget(myButton3);
 
-    QPushButton* myButton4 = creator.createButton("John B2", blueWidget);
+    QPushButton* myButton4 = creator.createBlueButton("John B2", blueWidget);
     blueVLayout->addWidget(myButton4);
 
     // add clearButton to outerRight

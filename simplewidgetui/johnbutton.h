@@ -11,8 +11,9 @@ public:
     johnbutton();
 
     // Method to create and return a QPushButton
-    QPushButton* createButton(const QString& text, QWidget* parent = nullptr);
+    QPushButton* createRedButton(const QString& text, QWidget* parent = nullptr);
 
+    QPushButton* createBlueButton(const QString& text, QWidget* parent = nullptr);
 };
 
 #endif // JOHNBUTTON_H

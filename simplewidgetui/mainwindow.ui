@@ -31,10 +31,14 @@
       <x>410</x>
       <y>100</y>
       <width>301</width>
-      <height>341</height>
+      <height>221</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="v2layout"/>
+    <layout class="QVBoxLayout" name="v2layout">
+     <property name="sizeConstraint">
+      <enum>QLayout::SizeConstraint::SetNoConstraint</enum>
+     </property>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

@@ -24,6 +24,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         johnbutton.h johnbutton.cpp
+        fullname.ui
+        fullname.h
+        fullname.h fullname.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET simplewidgetui APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
