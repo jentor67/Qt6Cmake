@@ -17,6 +17,8 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+        #fullname.h
+        #fullname.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -25,7 +27,6 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         johnbutton.h johnbutton.cpp
         fullname.ui
-        fullname.h
         fullname.h fullname.cpp
     )
 # Define target properties for Android with Qt 6 as:

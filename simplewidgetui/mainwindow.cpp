@@ -72,33 +72,6 @@ MainWindow::MainWindow(QWidget *parent)
     QPushButton* myButton4 = creator.createBlueButton("John B2", blueWidget);
     blueVLayout->addWidget(myButton4);
 
-    // add clearButton to outerRight
-    // auto clearButton = new QPushButton("Clear"); //create button
-    // clearButton->setFixedSize(100, 50);
-    // clearButton->setStyleSheet("border: 2px solid blue; background-color: red;");
-    // outerRight->addWidget(clearButton);  // add to outerLeft layout
-
-
-    // add saveButton to outerLeft
-    // auto saveButton = new QPushButton("Save"); // create button
-    // saveButton->setFixedSize(50,100);
-    //outerLeft->addWidget(saveButton); // add to outerLeft layout
-
-
-
-
-
-
-
-
-
-    //ui->v2layout->addWidget(saveButton);
-
-
-
-    //outerLeft->setContentsMargins(0, 0, 0, 0);
-
-
 
 
 }
