@@ -62,7 +62,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainW
 
     QPushButton* myButton1 = creator.createRedButton("John R1", redWidget);
     // Connect the button's clicked signal to the slot
-    connect(myButton1, &QPushButton::clicked, this, &MainWindow::on_pushButton_clicked);
+    //connect(button, &QPushButton::clicked, this, &MainWindow::handleButtonClick); // change the button name
+    connect(myButton1, &QPushButton::clicked, this, &MainWindow::handlejohnaction);
     redVLayout->addWidget(myButton1);
 
     QPushButton* myButton2 = creator.createRedButton("John R2", redWidget);
@@ -81,20 +82,34 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainW
 // fullname f; // Create an instance of your dialog.
 // f.show(); // Show the dialog.
 
-void MainWindow::on_pushButton_clicked()
+// void MainWindow::on_pushButton_clicked()
+// {
+//     //if (!myNewWindow) { // Create only if not already created
+//         //myNewWindow = new NewWindow(this); // Pass 'this' as parent for proper memory management
+//         fullname myNewWindow;
+//     //}
+//     myNewWindow.show(); // Show the new window
+//     myNewWindow.raise(); // Bring it to the front
+//     myNewWindow.activateWindow(); // Activate it
+// }
+
+void MainWindow::handlejohnaction()
 {
     //if (!myNewWindow) { // Create only if not already created
-        //myNewWindow = new NewWindow(this); // Pass 'this' as parent for proper memory management
-        fullname myNewWindow;
+            //myNewWindow = new NewWindow(this); // Pass 'this' as parent for proper memory management
+    fullname myNewWindow;
     //}
     myNewWindow.show(); // Show the new window
     myNewWindow.raise(); // Bring it to the front
     myNewWindow.activateWindow(); // Activate it
+
+    qDebug() << "Button clicked! Executing C++ function."; // Example action
 }
 
 
 MainWindow::~MainWindow()
 {
+
     delete ui;
     delete myNewWindow;
 }

@@ -19,8 +19,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked(); // Slot to handle button clicks
-
+     void handlejohnaction();
 
 private:
     Ui::MainWindow *ui;
