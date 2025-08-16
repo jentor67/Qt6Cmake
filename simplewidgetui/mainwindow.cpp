@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "johnbutton.h"
+#include "fullname.h"
 
 #include "QLabel"
 #include "QTextEdit"
@@ -9,11 +10,10 @@
 #include "QHBoxLayout"
 #include "QWidget"
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    myNewWindow = nullptr;
 
     // the right side
     // 1. Create a QWidget to put into v1layout
@@ -61,6 +61,8 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     QPushButton* myButton1 = creator.createRedButton("John R1", redWidget);
+    // Connect the button's clicked signal to the slot
+    connect(myButton1, &QPushButton::clicked, this, &MainWindow::on_pushButton_clicked);
     redVLayout->addWidget(myButton1);
 
     QPushButton* myButton2 = creator.createRedButton("John R2", redWidget);
@@ -76,7 +78,23 @@ MainWindow::MainWindow(QWidget *parent)
 
 }
 
+// fullname f; // Create an instance of your dialog.
+// f.show(); // Show the dialog.
+
+void MainWindow::on_pushButton_clicked()
+{
+    //if (!myNewWindow) { // Create only if not already created
+        //myNewWindow = new NewWindow(this); // Pass 'this' as parent for proper memory management
+        fullname myNewWindow;
+    //}
+    myNewWindow.show(); // Show the new window
+    myNewWindow.raise(); // Bring it to the front
+    myNewWindow.activateWindow(); // Activate it
+}
+
+
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete myNewWindow;
 }

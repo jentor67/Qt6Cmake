@@ -10,8 +10,8 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
-    fullname f; // Create an instance of your dialog.
-    f.show(); // Show the dialog.
+    // fullname f; // Create an instance of your dialog.
+    // f.show(); // Show the dialog.
 
 
     return a.exec();

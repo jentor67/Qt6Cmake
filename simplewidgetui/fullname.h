@@ -15,11 +15,11 @@ class fullname : public QMainWindow
     Q_OBJECT
 
 public:
-    fullname(QWidget *parent = nullptr);
+    explicit fullname(QWidget *parent = nullptr);
     ~fullname();
 
-private:
-    Ui::fullname *ui;
+// private:
+//     Ui::fullname *ui;
 };
 
 #endif // FULLNAME_H

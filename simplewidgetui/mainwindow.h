@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "fullname.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -17,7 +18,14 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_pushButton_clicked(); // Slot to handle button clicks
+
+
 private:
     Ui::MainWindow *ui;
+    fullname *myNewWindow;
+
+
 };
 #endif // MAINWINDOW_H
