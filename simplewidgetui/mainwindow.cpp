@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "johnbutton.h"
-#include "fullname.h"
+//#include "fullname.h"
 
 #include "QLabel"
 #include "QTextEdit"
@@ -10,7 +10,13 @@
 #include "QHBoxLayout"
 #include "QWidget"
 
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainWindow)
+// MainWindow::MainWindow(QWidget *parent)
+//     : QMainWindow(parent), ui(new Ui::MainWindow), secondWindow(nullptr)
+// {
+//     ui->setupUi(this);
+
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent) , ui(new Ui::MainWindow), fullname(nullptr)
 {
     ui->setupUi(this);
     myNewWindow = nullptr;
@@ -81,24 +87,20 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainW
 
 // fullname f; // Create an instance of your dialog.
 // f.show(); // Show the dialog.
-
-// void MainWindow::on_pushButton_clicked()
+// void MainWindow::openSecondWindow()
 // {
-//     //if (!myNewWindow) { // Create only if not already created
-//         //myNewWindow = new NewWindow(this); // Pass 'this' as parent for proper memory management
-//         fullname myNewWindow;
-//     //}
-//     myNewWindow.show(); // Show the new window
-//     myNewWindow.raise(); // Bring it to the front
-//     myNewWindow.activateWindow(); // Activate it
+//     if (!secondWindow)
+//         secondWindow = new SecondWindow(this);  // create only once
+//     secondWindow->show();
 // }
+
+
 
 void MainWindow::handlejohnaction()
 {
-    //if (!myNewWindow) { // Create only if not already created
-            //myNewWindow = new NewWindow(this); // Pass 'this' as parent for proper memory management
-    fullname myNewWindow;
-    //}
+    if (!myNewWindow)  // Create only if not already created
+        fullname = new myNewWindow(this);
+
     myNewWindow.show(); // Show the new window
     myNewWindow.raise(); // Bring it to the front
     myNewWindow.activateWindow(); // Activate it

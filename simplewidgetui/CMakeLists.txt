@@ -2,6 +2,27 @@ cmake_minimum_required(VERSION 3.16)
 
 project(simplewidgetui VERSION 0.1 LANGUAGES CXX)
 
+# cmake_minimum_required(VERSION 3.16)
+# project(MyApp LANGUAGES CXX)
+
+# set(CMAKE_AUTOMOC ON)
+# set(CMAKE_AUTOUIC ON)
+# set(CMAKE_AUTORCC ON)
+
+# find_package(Qt6 REQUIRED COMPONENTS Widgets)
+
+# add_executable(MyApp
+#     main.cpp
+#     mainwindow.cpp
+#     mainwindow.h
+#     mainwindow.ui
+# )
+
+# target_link_libraries(MyApp PRIVATE Qt6::Widgets)
+
+
+
+
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -17,17 +38,19 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
-        #fullname.h
-        #fullname.cpp
+        fullname.h
+        fullname.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(simplewidgetui
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        johnbutton.h johnbutton.cpp
+        johnbutton.h
+        johnbutton.cpp
         fullname.ui
-        fullname.h fullname.cpp
+        fullname.h
+        fullname.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET simplewidgetui APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
