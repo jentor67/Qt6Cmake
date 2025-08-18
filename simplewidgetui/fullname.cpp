@@ -1,14 +1,16 @@
 #include "fullname.h"
-#include "ui_fullname.h"
+//#include "ui_fullname.h"
 
-fullname::fullname(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::fullname)
-{}
-
-fullname::~fullname()
+fullname::fullname(QMainWindow *parent) : QMainWindow(parent)//, ui(new Ui::fullname)
 {
-    delete ui;
+
+    //ui->setupUi(this);
 }
+
+// fullname::~fullname()
+// {
+//     delete ui;
+// }
 
 
 // #include "secondwindow.h"

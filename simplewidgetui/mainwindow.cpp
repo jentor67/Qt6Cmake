@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "johnbutton.h"
-//#include "fullname.h"
+#include "fullname.h"
 
 #include "QLabel"
 #include "QTextEdit"
@@ -16,7 +16,7 @@
 //     ui->setupUi(this);
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent) , ui(new Ui::MainWindow), fullname(nullptr)
+    : QMainWindow(parent) , ui(new Ui::MainWindow), myNewWindow(nullptr)
 {
     ui->setupUi(this);
     myNewWindow = nullptr;
@@ -99,11 +99,11 @@ MainWindow::MainWindow(QWidget *parent)
 void MainWindow::handlejohnaction()
 {
     if (!myNewWindow)  // Create only if not already created
-        fullname = new myNewWindow(this);
+        myNewWindow = new fullname(this);
 
-    myNewWindow.show(); // Show the new window
-    myNewWindow.raise(); // Bring it to the front
-    myNewWindow.activateWindow(); // Activate it
+    myNewWindow->show(); // Show the new window
+    //myNewWindow->raise(); // Bring it to the front
+    //myNewWindow->activateWindow(); // Activate it
 
     qDebug() << "Button clicked! Executing C++ function."; // Example action
 }

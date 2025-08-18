@@ -2,9 +2,6 @@ cmake_minimum_required(VERSION 3.16)
 
 project(simplewidgetui VERSION 0.1 LANGUAGES CXX)
 
-# cmake_minimum_required(VERSION 3.16)
-# project(MyApp LANGUAGES CXX)
-
 # set(CMAKE_AUTOMOC ON)
 # set(CMAKE_AUTOUIC ON)
 # set(CMAKE_AUTORCC ON)
@@ -19,8 +16,6 @@ project(simplewidgetui VERSION 0.1 LANGUAGES CXX)
 # )
 
 # target_link_libraries(MyApp PRIVATE Qt6::Widgets)
-
-
 
 
 set(CMAKE_AUTOUIC ON)
@@ -40,6 +35,7 @@ set(PROJECT_SOURCES
         mainwindow.ui
         fullname.h
         fullname.cpp
+        fullname.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

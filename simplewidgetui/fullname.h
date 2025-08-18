@@ -1,19 +1,19 @@
 #ifndef FULLNAME_H
 #define FULLNAME_H
 
-#include "QWidget"
+#include "QMainWindow"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {class fullname; }
 QT_END_NAMESPACE
 
 
-class fullname : public QWidget
+class fullname : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit fullname(QWidget *parent = nullptr);
+    explicit fullname(QMainWindow *parent = nullptr);
     ~fullname();
 
 private:
@@ -21,6 +21,31 @@ private:
 };
 
 #endif // FULLNAME_H
+
+
+
+
+// #pragma once
+
+// #include <QMainWindow>
+
+// namespace Ui {
+// class MainWindow;  // Forward declaration is OK here
+// }
+
+// class MainWindow : public QMainWindow
+// {
+//     Q_OBJECT
+
+// public:
+//     explicit MainWindow(QWidget *parent = nullptr);
+//     ~MainWindow();
+
+// private:
+//     Ui::MainWindow *ui;  // pointer, forward-declared type is fine
+// };
+
+
 
 
 // #ifndef SECONDWINDOW_H
