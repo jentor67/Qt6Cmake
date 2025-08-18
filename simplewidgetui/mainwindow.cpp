@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "johnbutton.h"
-#include "fullname.h"
+//#include "fullname.h"
 
 #include "QLabel"
 #include "QTextEdit"
@@ -10,13 +10,12 @@
 #include "QHBoxLayout"
 #include "QWidget"
 
-// MainWindow::MainWindow(QWidget *parent)
-//     : QMainWindow(parent), ui(new Ui::MainWindow), secondWindow(nullptr)
-// {
-//     ui->setupUi(this);
+
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent) , ui(new Ui::MainWindow), myNewWindow(nullptr)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
+    , myNewWindow(nullptr)
 {
     ui->setupUi(this);
     myNewWindow = nullptr;
@@ -85,25 +84,17 @@ MainWindow::MainWindow(QWidget *parent)
 
 }
 
-// fullname f; // Create an instance of your dialog.
-// f.show(); // Show the dialog.
-// void MainWindow::openSecondWindow()
-// {
-//     if (!secondWindow)
-//         secondWindow = new SecondWindow(this);  // create only once
-//     secondWindow->show();
-// }
 
 
 
 void MainWindow::handlejohnaction()
 {
     if (!myNewWindow)  // Create only if not already created
-        myNewWindow = new fullname(this);
+        myNewWindow = new Ui::fullname(this);
 
     myNewWindow->show(); // Show the new window
-    //myNewWindow->raise(); // Bring it to the front
-    //myNewWindow->activateWindow(); // Activate it
+    myNewWindow->raise(); // Bring it to the front
+    myNewWindow->activateWindow(); // Activate it
 
     qDebug() << "Button clicked! Executing C++ function."; // Example action
 }
@@ -113,5 +104,4 @@ MainWindow::~MainWindow()
 {
 
     delete ui;
-    delete myNewWindow;
 }

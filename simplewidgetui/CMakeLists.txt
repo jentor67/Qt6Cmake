@@ -2,22 +2,6 @@ cmake_minimum_required(VERSION 3.16)
 
 project(simplewidgetui VERSION 0.1 LANGUAGES CXX)
 
-# set(CMAKE_AUTOMOC ON)
-# set(CMAKE_AUTOUIC ON)
-# set(CMAKE_AUTORCC ON)
-
-# find_package(Qt6 REQUIRED COMPONENTS Widgets)
-
-# add_executable(MyApp
-#     main.cpp
-#     mainwindow.cpp
-#     mainwindow.h
-#     mainwindow.ui
-# )
-
-# target_link_libraries(MyApp PRIVATE Qt6::Widgets)
-
-
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -39,7 +23,8 @@ set(PROJECT_SOURCES
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(simplewidgetui
+    qt_add_executable(
+        simplewidgetui
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         johnbutton.h
