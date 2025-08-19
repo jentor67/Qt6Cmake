@@ -1,11 +1,9 @@
 #ifndef SECONDWINDOW_H
 #define SECONDWINDOW_H
 
-#include <QWidget>
-#include <QPushButton>
-#include <QVBoxLayout>
+#include <QMainWindow>
 
-class SecondWindow : public QWidget {
+class SecondWindow : public QMainWindow {
     Q_OBJECT
 public:
     explicit SecondWindow(QWidget *parent = nullptr);

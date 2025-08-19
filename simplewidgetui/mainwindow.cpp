@@ -70,7 +70,7 @@ MainWindow::MainWindow(QWidget *parent)
     // Connect the button's clicked signal to the slot
     //connect(button, &QPushButton::clicked, this, &MainWindow::handleButtonClick); // change the button name
     //connect(myButton1, &QPushButton::clicked, this, &MainWindow::handlejohnaction);
-    connect(myButton1, &QPushButton::clicked, this, &MainWindow::openSecondWindow);
+    //connect(myButton1, &QPushButton::clicked, this, &MainWindow::openSecondWindow);
     redVLayout->addWidget(myButton1);
 
     QPushButton* myButton2 = creator.createRedButton("John R2", redWidget);
@@ -83,16 +83,27 @@ MainWindow::MainWindow(QWidget *parent)
     blueVLayout->addWidget(myButton4);
 
 
+    // Keep the second window alive (not destroyed after function exits)
+    //qt6 cmake create a window in subroutine in code
+    SecondWindow *secondWin = new SecondWindow;
+
+    QObject::connect(myButton1, &QPushButton::clicked, [&]() {
+        secondWin->show();
+        secondWin->raise();   // bring to front
+        secondWin->activateWindow();
+    });
+    //connect(myButton1, &QPushButton::clicked, ,)
+
 
 }
 
 void MainWindow::openSecondWindow() {
-    if (!secondWindow) {
-        secondWindow = new SecondWindow(this);  // parent is main window
-    }
-    secondWindow->show();
-    secondWindow->raise();
-    secondWindow->activateWindow();
+    // if (!secondWindow) {
+    //     secondWindow = new SecondWindow(this);  // parent is main window
+    // }
+    // secondWindow->show();
+    // secondWindow->raise();
+    // secondWindow->activateWindow();
 }
 
 
