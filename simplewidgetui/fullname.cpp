@@ -1,13 +1,13 @@
 #include "fullname.h"
-#include "./ui_fullname.h"
+//#include "./ui_fullname.h"
 
 namespace Ui {
 fullname::fullname(QDialog *parent)
     : QDialog(parent)
-    , ui(new Ui::fullname)
+    //, ui(new Ui::fullname)
 {
 
-    ui->setupUi(this);
+   // ui->setupUi(this);
 
 }
 

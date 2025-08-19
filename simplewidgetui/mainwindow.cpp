@@ -15,10 +15,11 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
-    , myNewWindow(nullptr)
+    //, myNewWindow(nullptr)
+    , secondWindow(nullptr)
 {
     ui->setupUi(this);
-    myNewWindow = nullptr;
+    //myNewWindow = nullptr;
 
     // the right side
     // 1. Create a QWidget to put into v1layout
@@ -68,7 +69,8 @@ MainWindow::MainWindow(QWidget *parent)
     QPushButton* myButton1 = creator.createRedButton("John R1", redWidget);
     // Connect the button's clicked signal to the slot
     //connect(button, &QPushButton::clicked, this, &MainWindow::handleButtonClick); // change the button name
-    connect(myButton1, &QPushButton::clicked, this, &MainWindow::handlejohnaction);
+    //connect(myButton1, &QPushButton::clicked, this, &MainWindow::handlejohnaction);
+    connect(myButton1, &QPushButton::clicked, this, &MainWindow::openSecondWindow);
     redVLayout->addWidget(myButton1);
 
     QPushButton* myButton2 = creator.createRedButton("John R2", redWidget);
@@ -84,20 +86,27 @@ MainWindow::MainWindow(QWidget *parent)
 
 }
 
-
-
-
-void MainWindow::handlejohnaction()
-{
-    if (!myNewWindow)  // Create only if not already created
-        myNewWindow = new Ui::fullname(this);
-
-    myNewWindow->show(); // Show the new window
-    myNewWindow->raise(); // Bring it to the front
-    myNewWindow->activateWindow(); // Activate it
-
-    qDebug() << "Button clicked! Executing C++ function."; // Example action
+void MainWindow::openSecondWindow() {
+    if (!secondWindow) {
+        secondWindow = new SecondWindow(this);  // parent is main window
+    }
+    secondWindow->show();
+    secondWindow->raise();
+    secondWindow->activateWindow();
 }
+
+
+// void MainWindow::handlejohnaction()
+// {
+//     // if (!myNewWindow)  // Create only if not already created
+//     //     myNewWindow = new Ui::fullname(this);
+
+//     // myNewWindow->show(); // Show the new window
+//     // myNewWindow->raise(); // Bring it to the front
+//     // myNewWindow->activateWindow(); // Activate it
+
+//     qDebug() << "Button clicked! Executing C++ function."; // Example action
+// }
 
 
 MainWindow::~MainWindow()

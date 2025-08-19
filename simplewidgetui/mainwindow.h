@@ -2,7 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "fullname.h"
+//#include "fullname.h"
+#include "secondwindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,11 +18,14 @@ public:
     ~MainWindow();
 
 private slots:
-     void handlejohnaction();
+    // void handlejohnaction();
+    void openSecondWindow();
 
 private:
     Ui::MainWindow *ui;
-    Ui::fullname *myNewWindow;
+    //Ui::fullname *myNewWindow;
+    QPushButton *button;
+    SecondWindow *secondWindow;
 
 
 };
