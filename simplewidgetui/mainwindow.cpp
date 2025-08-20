@@ -85,13 +85,13 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Keep the second window alive (not destroyed after function exits)
     //qt6 cmake create a window in subroutine in code
-    SecondWindow *secondWin = new SecondWindow;
+    // SecondWindow *secondWin = new SecondWindow;
 
-    QObject::connect(myButton1, &QPushButton::clicked, [&]() {
-        secondWin->show();
-        secondWin->raise();   // bring to front
-        secondWin->activateWindow();
-    });
+    // QObject::connect(myButton1, &QPushButton::clicked, this, [this]() {
+    //     secondWin->show();
+    //     secondWin->raise();   // bring to front
+    //     secondWin->activateWindow();
+    // });
     //connect(myButton1, &QPushButton::clicked, ,)
 
 
