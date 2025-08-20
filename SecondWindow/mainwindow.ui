@@ -17,14 +17,27 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>160</y>
+      <x>240</x>
+      <y>30</y>
       <width>261</width>
       <height>131</height>
      </rect>
     </property>
     <property name="text">
      <string>Open Second Dialog</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonThirdWindow_2">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>260</y>
+      <width>251</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Open Third Dialog</string>
     </property>
    </widget>
   </widget>
@@ -34,7 +47,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

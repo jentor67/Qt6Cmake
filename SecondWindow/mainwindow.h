@@ -18,7 +18,8 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
+    void activateSecondWindowclicked();
+    void activateThirdWindowclicked();
 
 private:
     Ui::MainWindow *ui;
