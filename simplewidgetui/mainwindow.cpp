@@ -2,6 +2,7 @@
 #include "./ui_mainwindow.h"
 #include "johnbutton.h"
 //#include "fullname.h"
+#include "simplewindow.h"
 
 #include "QLabel"
 #include "QTextEdit"
@@ -15,8 +16,6 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
-    //, myNewWindow(nullptr)
-    , secondWindow(nullptr)
 {
     ui->setupUi(this);
     //myNewWindow = nullptr;
@@ -67,13 +66,10 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     QPushButton* myButton1 = creator.createRedButton("John R1", redWidget);
-    // Connect the button's clicked signal to the slot
-    //connect(button, &QPushButton::clicked, this, &MainWindow::handleButtonClick); // change the button name
-    //connect(myButton1, &QPushButton::clicked, this, &MainWindow::handlejohnaction);
-    //connect(myButton1, &QPushButton::clicked, this, &MainWindow::openSecondWindow);
     redVLayout->addWidget(myButton1);
 
     QPushButton* myButton2 = creator.createRedButton("John R2", redWidget);
+    connect(myButton2, &QPushButton::clicked, this, &MainWindow::activateSimpleWindowclicked);
     redVLayout->addWidget(myButton2);
 
     QPushButton* myButton3 = creator.createBlueButton("John B1", blueWidget);
@@ -83,41 +79,15 @@ MainWindow::MainWindow(QWidget *parent)
     blueVLayout->addWidget(myButton4);
 
 
-    // Keep the second window alive (not destroyed after function exits)
-    //qt6 cmake create a window in subroutine in code
-    // SecondWindow *secondWin = new SecondWindow;
-
-    // QObject::connect(myButton1, &QPushButton::clicked, this, [this]() {
-    //     secondWin->show();
-    //     secondWin->raise();   // bring to front
-    //     secondWin->activateWindow();
-    // });
-    //connect(myButton1, &QPushButton::clicked, ,)
-
-
 }
 
-void MainWindow::openSecondWindow() {
-    // if (!secondWindow) {
-    //     secondWindow = new SecondWindow(this);  // parent is main window
-    // }
-    // secondWindow->show();
-    // secondWindow->raise();
-    // secondWindow->activateWindow();
+void MainWindow::activateSimpleWindowclicked()
+{
+    SimpleWindow secDeialog;
+    secDeialog.setModal(true);
+    secDeialog.exec();
 }
 
-
-// void MainWindow::handlejohnaction()
-// {
-//     // if (!myNewWindow)  // Create only if not already created
-//     //     myNewWindow = new Ui::fullname(this);
-
-//     // myNewWindow->show(); // Show the new window
-//     // myNewWindow->raise(); // Bring it to the front
-//     // myNewWindow->activateWindow(); // Activate it
-
-//     qDebug() << "Button clicked! Executing C++ function."; // Example action
-// }
 
 
 MainWindow::~MainWindow()

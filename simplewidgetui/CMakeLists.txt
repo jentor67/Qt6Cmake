@@ -35,6 +35,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         fullname.h
         fullname.cpp
         secondwindow.h secondwindow.cpp
+        simplewindow.h simplewindow.cpp simplewindow.ui
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET simplewidgetui APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
