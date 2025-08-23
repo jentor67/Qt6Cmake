@@ -1,15 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
-#include "QDebug"
 #include "QProcess"
-#include "QPainter"
-#include "QStyle"
-#include "QStyleOptionButton"
 #include "MyButton.h"
-#include "QWidget"
-#include <QPainter>
-#include <QPaintEvent>
-
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -54,9 +46,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     text = "CPU Core Load\n";
 
-    // QString str1 = "echo 100 - $(mpstat -P ";
-    // QString str2 = " | tail -1 | awk \'{print $13}\') | bc";
-
 
     // add title to Vertical Core and Load
     QLabel *labelNumberTitle = new QLabel();
@@ -65,44 +54,43 @@ MainWindow::MainWindow(QWidget *parent)
     labelNumberTitle->setAlignment(Qt::AlignCenter);
 
 
-    ui->VerticalCore->addWidget(labelNumberTitle);
+    //ui->VerticalCore->addWidget(labelNumberTitle);
 
     QLabel *labelLoadTitle = new QLabel();
     labelLoadTitle->setText("Load");
     labelLoadTitle->setStyleSheet("background-color:red;");
     labelLoadTitle->setAlignment(Qt::AlignCenter);
-    ui->VerticalLoad->addWidget(labelLoadTitle);
 
-
-
-    // for ( int i = 0 ; i < cpus; ++i) {
-    //     QString strNumber = QString::number(i);
-    //     command =  str1 + strNumber + str2;
-    //     QString strLoad = processBash(command).trimmed();
-
-    //     QLabel *labelNumber =  new QLabel();
-    //     labelNumber->setText(strNumber);
-    //     labelNumber->setIndent(20);
-    //     ui->VerticalCore->addWidget(labelNumber);
-
-    //     QLabel *labelLoad = new QLabel();
-    //     labelLoad->setText(strLoad);
-    //     labelLoad->setIndent(20);
-    //     ui->VerticalLoad->addWidget(labelLoad);
-
-    // }
-
-    // Add a stretchable space
-    ui->VerticalCore->addStretch();
-    ui->VerticalLoad->addStretch();
-    //#####################################################
     connect(ui->cpuRefreshButton, &QPushButton::clicked, this, [=]() {refreshCPU(cpus);});  //this works
 }
+
+
+
+void MainWindow::clearLayout(QLayout *layout) {
+    if (!layout)
+        return;
+
+    QLayoutItem *item;
+    while ((item = layout->takeAt(0)) != nullptr) {
+        if (QWidget *widget = item->widget()) {
+            widget->hide();      // optional
+            widget->deleteLater(); // safely schedules deletion
+        }
+        if (QLayout *childLayout = item->layout()) {
+            clearLayout(childLayout); // recursive cleanup
+        }
+        delete item;
+    }
+}
+
 
 void MainWindow::refreshCPU( int cpus)
 {
     QString command;
     qDebug() << "Hello John"; // << process.errorString();
+
+    clearLayout(ui->VerticalCore);
+    clearLayout(ui->VerticalLoad);
 
     QString str1 = "echo 100 - $(mpstat -P ";
     QString str2 = " | tail -1 | awk \'{print $13}\') | bc";
@@ -123,6 +111,8 @@ void MainWindow::refreshCPU( int cpus)
         ui->VerticalLoad->addWidget(labelLoad);
 
     }
+    ui->VerticalCore->addStretch();
+    ui->VerticalLoad->addStretch();
 }
 
 
@@ -145,8 +135,6 @@ QString MainWindow::processBash(QString command) {
     QString output = process.readAllStandardOutput();
 
 
-
-
     return output;
 }
 
@@ -155,7 +143,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_actionExit_triggered()
+void MainWindow::ExitWindow()
 {
     close();
 }

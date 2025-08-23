@@ -13,7 +13,7 @@ public:
     void drawControl(ControlElement element, const QStyleOption *option,
                      QPainter *painter, const QWidget *widget = nullptr) const override;
 };
-//     };
+
 
 
 #endif // MYCUSTOMSTYLE_H

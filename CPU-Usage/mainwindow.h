@@ -7,7 +7,7 @@
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
-//class MyCustomStyleJohn;
+
 }
 QT_END_NAMESPACE
 
@@ -21,10 +21,10 @@ public:
 
     QString processBash(QString command);
     void refreshCPU(int cpus);
+    void clearLayout(QLayout *layout);
 
 private slots:
-    void on_actionExit_triggered();
-
+    void ExitWindow();
 
 
 private:

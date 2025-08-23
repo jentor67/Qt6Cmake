@@ -1,10 +1,10 @@
 #include "mycustomstyle.h"
 
 
-
 MyCustomStyle::MyCustomStyle(QStyle *style)
     : QProxyStyle(style)
 {
+
 }
 
 void MyCustomStyle::drawControl(ControlElement element, const QStyleOption *option,
