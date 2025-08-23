@@ -20,6 +20,7 @@ public:
     ~MainWindow();
 
     QString processBash(QString command);
+    void refreshCPU(int cpus);
 
 private slots:
     void on_actionExit_triggered();

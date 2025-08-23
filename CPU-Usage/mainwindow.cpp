@@ -49,15 +49,13 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->lblCPUSValue->setText(QString::number(cpus));
 
-    //qDebug() << cpus;
 
-    //ui->txtBrwCORES->append(text);
     QString text;
 
     text = "CPU Core Load\n";
 
-    QString str1 = "echo 100 - $(mpstat -P ";
-    QString str2 = " | tail -1 | awk \'{print $13}\') | bc";
+    // QString str1 = "echo 100 - $(mpstat -P ";
+    // QString str2 = " | tail -1 | awk \'{print $13}\') | bc";
 
 
     // add title to Vertical Core and Load
@@ -76,6 +74,39 @@ MainWindow::MainWindow(QWidget *parent)
     ui->VerticalLoad->addWidget(labelLoadTitle);
 
 
+
+    // for ( int i = 0 ; i < cpus; ++i) {
+    //     QString strNumber = QString::number(i);
+    //     command =  str1 + strNumber + str2;
+    //     QString strLoad = processBash(command).trimmed();
+
+    //     QLabel *labelNumber =  new QLabel();
+    //     labelNumber->setText(strNumber);
+    //     labelNumber->setIndent(20);
+    //     ui->VerticalCore->addWidget(labelNumber);
+
+    //     QLabel *labelLoad = new QLabel();
+    //     labelLoad->setText(strLoad);
+    //     labelLoad->setIndent(20);
+    //     ui->VerticalLoad->addWidget(labelLoad);
+
+    // }
+
+    // Add a stretchable space
+    ui->VerticalCore->addStretch();
+    ui->VerticalLoad->addStretch();
+    //#####################################################
+    connect(ui->cpuRefreshButton, &QPushButton::clicked, this, [=]() {refreshCPU(cpus);});  //this works
+}
+
+void MainWindow::refreshCPU( int cpus)
+{
+    QString command;
+    qDebug() << "Hello John"; // << process.errorString();
+
+    QString str1 = "echo 100 - $(mpstat -P ";
+    QString str2 = " | tail -1 | awk \'{print $13}\') | bc";
+
     for ( int i = 0 ; i < cpus; ++i) {
         QString strNumber = QString::number(i);
         command =  str1 + strNumber + str2;
@@ -92,16 +123,7 @@ MainWindow::MainWindow(QWidget *parent)
         ui->VerticalLoad->addWidget(labelLoad);
 
     }
-
-    // Add a stretchable space
-    ui->VerticalCore->addStretch();
-    ui->VerticalLoad->addStretch();
-    //#####################################################
-
-
 }
-
-
 
 
 QString MainWindow::processBash(QString command) {
@@ -121,11 +143,9 @@ QString MainWindow::processBash(QString command) {
 
     // // Optional: Read standard output
     QString output = process.readAllStandardOutput();
-    // qDebug() << "Standard Output:\n" << output;
 
-    // // Optional: Read standard error
-    // QByteArray error = process.readAllStandardError();
-    // qDebug() << "Standard Error:\n" << error;
+
+
 
     return output;
 }
