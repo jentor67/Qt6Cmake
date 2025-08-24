@@ -58,7 +58,7 @@ MainWindow::MainWindow(QWidget *parent)
     //ui->VerticalCore->addWidget(labelNumberTitle);
 
     QLabel *labelLoadTitle = new QLabel();
-    labelLoadTitle->setText("Load");
+    labelLoadTitle->setText("Load%");
     labelLoadTitle->setStyleSheet("background-color:red;");
     labelLoadTitle->setAlignment(Qt::AlignCenter);
 
