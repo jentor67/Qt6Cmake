@@ -35,36 +35,18 @@ MainWindow::MainWindow(QWidget *parent)
 
     // ############ CPU parts#######################
     QString command;
+
     // Get the number of CPU's
     command = "lscpu | grep \"^CPU(s):\" | awk '{print $2}'";
 
     int cpus =  processBash(command).trimmed().toInt();  //remove \n and convert to integer
-
+    // place value on label
     ui->lblCPUSValue->setText(QString::number(cpus));
 
-
-    QString text;
-
-    text = "CPU Core Load\n";
-
-
-    // add title to Vertical Core and Load
-    QLabel *labelNumberTitle = new QLabel();
-    labelNumberTitle->setText("Core");
-    labelNumberTitle->setStyleSheet("background-color:red;");
-    labelNumberTitle->setAlignment(Qt::AlignCenter);
-
-
-    //ui->VerticalCore->addWidget(labelNumberTitle);
-
-    QLabel *labelLoadTitle = new QLabel();
-    labelLoadTitle->setText("Load%");
-    labelLoadTitle->setStyleSheet("background-color:red;");
-    labelLoadTitle->setAlignment(Qt::AlignCenter);
-
+    // create connection for cpuRefreshButton
     connect(ui->cpuRefreshButton, &QPushButton::clicked, this, [=]() {refreshCPU(cpus);});  //this works
 
-
+    // get values of CPU and place on window
     MainWindow::refreshCPU(cpus);
 }
 
@@ -93,9 +75,11 @@ void MainWindow::refreshCPU( int cpus)
     QString command;
     qDebug() << "Hello John"; // << process.errorString();
 
+    // clear layouts
     clearLayout(ui->VerticalCore);
     clearLayout(ui->VerticalLoad);
 
+    // create starting command
     QString str1 = "echo 100 - $(mpstat -P ";
     QString str2 = " | tail -1 | awk \'{print $13}\') | bc";
 
@@ -122,7 +106,6 @@ void MainWindow::refreshCPU( int cpus)
 
 QString MainWindow::processBash(QString command) {
 
-
     QProcess process;
     QString program = "/usr/bin/bash"; // Or "/usr/bin/bash" depending on your system
 
@@ -135,9 +118,8 @@ QString MainWindow::processBash(QString command) {
         qDebug() << "Process failed to finish:" << process.errorString();
     }
 
-    // // Optional: Read standard output
+    // Optional: Read standard output
     QString output = process.readAllStandardOutput();
-
 
     return output;
 }
@@ -147,12 +129,10 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
- void MainWindow::ExitWindow()
- {
-     close();
- }
-
-
+void MainWindow::ExitWindow()
+{
+    close();
+}
 
 void MainWindow::on_actionExit_triggered()
 {

@@ -1,0 +1,137 @@
+main.cpp
+
+#include <QApplication>
+#include <QMainWindow>
+#include <QLabel>
+#include <QVBoxLayout>
+#include <QTimer>
+#include <QSysInfo>
+#include <QProcess>
+#include <QDebug>
+
+#if defined(Q_OS_LINUX)
+#include <sys/sysinfo.h>
+#endif
+
+// Function to get CPU usage (Linux-specific for demonstration)
+double getCpuUsage() {
+#if defined(Q_OS_LINUX)
+    static long long lastTotalTime = 0;
+    static long long lastIdleTime = 0;
+
+    QFile file("/proc/stat");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        return 0.0;
+    }
+
+    QTextStream in(&file);
+    QString line = in.readLine();
+    file.close();
+
+    QStringList parts = line.split(" ", Qt::SkipEmptyParts);
+    if (parts.size() < 5) {
+        return 0.0;
+    }
+
+    long long user = parts[1].toLongLong();
+    long long nice = parts[2].toLongLong();
+    long long system = parts[3].toLongLong();
+    long long idle = parts[4].toLongLong();
+
+    long long totalTime = user + nice + system + idle;
+    long long idleTime = idle;
+
+    if (lastTotalTime == 0) {
+        lastTotalTime = totalTime;
+        lastIdleTime = idleTime;
+        return 0.0;
+    }
+
+    double totalTimeDelta = static_cast<double>(totalTime - lastTotalTime);
+    double idleTimeDelta = static_cast<double>(idleTime - lastIdleTime);
+
+    lastTotalTime = totalTime;
+    lastIdleTime = idleTime;
+
+    if (totalTimeDelta == 0) {
+        return 0.0;
+    }
+
+    return 100.0 * (1.0 - idleTimeDelta / totalTimeDelta);
+#else
+    // Windows/macOS require different methods (e.g., using `QProcess` or specific APIs)
+    return 0.0; // Placeholder
+#endif
+}
+
+class SystemMonitor : public QMainWindow {
+    Q_OBJECT
+
+public:
+    SystemMonitor(QWidget *parent = nullptr) : QMainWindow(parent) {
+        QWidget *centralWidget = new QWidget(this);
+        setCentralWidget(centralWidget);
+
+        QVBoxLayout *layout = new QVBoxLayout(centralWidget);
+
+        cpuLabel = new QLabel("CPU Usage: N/A", this);
+        layout->addWidget(cpuLabel);
+
+        sysInfoLabel = new QLabel("System Info: N/A", this);
+        layout->addWidget(sysInfoLabel);
+
+        QTimer *timer = new QTimer(this);
+        connect(timer, &QTimer::timeout, this, &SystemMonitor::updateMonitor);
+        timer->start(1000); // Update every second
+
+        updateMonitor();
+    }
+
+private slots:
+    void updateMonitor() {
+        // Update CPU usage
+        double cpuUsage = getCpuUsage();
+        cpuLabel->setText(QString("CPU Usage: %1%").arg(cpuUsage, 0, 'f', 2));
+
+        // Update other system info
+        QString sysInfo = QString(
+            "Kernel: %1\n"
+            "Build CPU Architecture: %2\n"
+            "Current CPU Architecture: %3\n")
+            .arg(QSysInfo::kernelType())
+            .arg(QSysInfo::buildCpuArchitecture())
+            .arg(QSysInfo::currentCpuArchitecture());
+        sysInfoLabel->setText(sysInfo);
+    }
+
+private:
+    QLabel *cpuLabel;
+    QLabel *sysInfoLabel;
+};
+
+#include "main.moc"
+
+int main(int argc, char *argv[]) {
+    QApplication a(argc, argv);
+    SystemMonitor w;
+    w.show();
+    return a.exec();
+}
+
+cmake.txt
+
+cmake_minimum_required(VERSION 3.16)
+
+project(SystemMonitor VERSION 1.0)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+find_package(Qt6 COMPONENTS Widgets REQUIRED)
+
+qt_standard_project_setup()
+
+add_executable(SystemMonitor main.cpp)
+
+target_link_libraries(SystemMonitor PRIVATE Qt6::Widgets)
+
