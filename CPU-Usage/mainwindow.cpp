@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "QProcess"
+#include "QThread"
 #include "MyButton.h"
 
 
@@ -62,6 +63,9 @@ MainWindow::MainWindow(QWidget *parent)
     labelLoadTitle->setAlignment(Qt::AlignCenter);
 
     connect(ui->cpuRefreshButton, &QPushButton::clicked, this, [=]() {refreshCPU(cpus);});  //this works
+
+
+    MainWindow::refreshCPU(cpus);
 }
 
 
@@ -143,11 +147,15 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::ExitWindow()
+ void MainWindow::ExitWindow()
+ {
+     close();
+ }
+
+
+
+void MainWindow::on_actionExit_triggered()
 {
     close();
 }
-
-
-
 

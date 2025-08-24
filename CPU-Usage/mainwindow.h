@@ -27,6 +27,8 @@ private slots:
     void ExitWindow();
 
 
+    void on_actionExit_triggered();
+
 private:
     Ui::MainWindow *ui;
 };
