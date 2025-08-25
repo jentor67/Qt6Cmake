@@ -4,6 +4,13 @@
 
 #include <QMainWindow>
 
+#include "QGridLayout"
+#include "QChar"
+#include "QChartView"
+// #include "QtCore"
+// #include "QtGui"
+#include "QtCharts"
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;

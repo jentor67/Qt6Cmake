@@ -239,22 +239,6 @@ border-color: rgb(255, 0, 0);</string>
      </property>
     </widget>
    </widget>
-   <widget class="QFrame" name="painterFrame">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>300</y>
-      <width>291</width>
-      <height>201</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Shape::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Shadow::Raised</enum>
-    </property>
-   </widget>
    <widget class="QLabel" name="labelCore">
     <property name="geometry">
      <rect>
@@ -294,6 +278,16 @@ border-color: rgb(255, 0, 0);</string>
      <string>Load %</string>
     </property>
    </widget>
+   <widget class="QChartView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>170</y>
+      <width>256</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -301,7 +295,7 @@ border-color: rgb(255, 0, 0);</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -319,6 +313,13 @@ border-color: rgb(255, 0, 0);</string>
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QChartView</class>
+   <extends>QGraphicsView</extends>
+   <header>QtCharts/QChartView</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections>
   <connection>

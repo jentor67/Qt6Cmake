@@ -4,6 +4,9 @@
 #include "QThread"
 #include "MyButton.h"
 #include "QTimer"
+#include "QChar"
+//#include "QCh
+
 
 
 
@@ -51,6 +54,21 @@ MainWindow::MainWindow(QWidget *parent)
     QTimer *memTimer = new QTimer(this);
     connect(memTimer, &QTimer::timeout, this, [=]() {refreshCPU(cpus);});
     memTimer->start(1000);
+
+
+    QChart *chart1 = new QChart();
+    QLineSeries *series1 = new QLineSeries();
+    series1->append(0, 6);
+    series1->append(2, 4);
+    series1->append(3, 8);
+    series1->append(7, 4);
+    series1->append(10, 5);
+    chart1->addSeries(series1);
+    chart1->setTitle("1st Simple Line Chart");
+    chart1->createDefaultAxes();
+    ui->graphicsView->setChart(chart1);
+
+    //ui->graphicsView_1->setChart(chart1);
 
     // get values of CPU and place on window
    // MainWindow::refreshCPU(cpus);
