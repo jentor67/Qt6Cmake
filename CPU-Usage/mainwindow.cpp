@@ -3,6 +3,8 @@
 #include "QProcess"
 #include "QThread"
 #include "MyButton.h"
+#include "QTimer"
+
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -11,24 +13,23 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-  //  QPushButton johnbutton("Click Me");
+    //  QPushButton johnbutton("Click Me");
     QPushButton *anotherButton = new QPushButton("Another Button", nullptr); // No parent
-
     ui->vlB1->addWidget(anotherButton);
 
     // Add button to vertical box vlB1
     MyButton *myButton = new MyButton("Click Me!",this);
     myButton->setStyleSheet("QPushButton { background-color: lightblue; color: navy; border: 2px solid darkblue; border-radius: 5px; padding: 5px; }"
-                         "QPushButton:hover { background-color: lightcyan; }"
-                         "QPushButton:pressed { background-color: steelblue; }");
+                            "QPushButton:hover { background-color: lightcyan; }"
+                            "QPushButton:pressed { background-color: steelblue; }");
     ui->vlB1->addWidget(myButton);
     // ###################################
 
     // Add button to vertical box vlB1
     MyButton *myButtonHitme = new MyButton("Hit ME!",this);
     myButtonHitme->setStyleSheet("QPushButton { background-color: lightblue; color: navy; border: 2px solid darkblue; border-radius: 5px; padding: 5px; }"
-                            "QPushButton:hover { background-color: lightcyan; }"
-                            "QPushButton:pressed { background-color: steelblue; }");
+                                 "QPushButton:hover { background-color: lightcyan; }"
+                                 "QPushButton:pressed { background-color: steelblue; }");
     ui->vlB1->addWidget(myButtonHitme);
     // ###################################
 
@@ -40,14 +41,19 @@ MainWindow::MainWindow(QWidget *parent)
     command = "lscpu | grep \"^CPU(s):\" | awk '{print $2}'";
 
     int cpus =  processBash(command).trimmed().toInt();  //remove \n and convert to integer
+
     // place value on label
     ui->lblCPUSValue->setText(QString::number(cpus));
 
     // create connection for cpuRefreshButton
-    connect(ui->cpuRefreshButton, &QPushButton::clicked, this, [=]() {refreshCPU(cpus);});  //this works
+    //connect(ui->cpuRefreshButton, &QPushButton::clicked, this, [=]() {refreshCPU(cpus);});  //this works
+
+    QTimer *memTimer = new QTimer(this);
+    connect(memTimer, &QTimer::timeout, this, [=]() {refreshCPU(cpus);});
+    memTimer->start(1000);
 
     // get values of CPU and place on window
-    MainWindow::refreshCPU(cpus);
+   // MainWindow::refreshCPU(cpus);
 }
 
 
@@ -73,7 +79,7 @@ void MainWindow::clearLayout(QLayout *layout) {
 void MainWindow::refreshCPU( int cpus)
 {
     QString command;
-    qDebug() << "Hello John"; // << process.errorString();
+    //qDebug() << "Hello John"; // << process.errorString();
 
     // clear layouts
     clearLayout(ui->VerticalCore);
