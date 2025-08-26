@@ -52,7 +52,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     QTimer *memTimer = new QTimer(this);
     connect(memTimer, &QTimer::timeout, this, [=]() {refreshCPU(cpus);});
-    memTimer->start(1000);
+    memTimer->start(1000/monitorFreq);
 
 
 }
@@ -111,7 +111,7 @@ void MainWindow::refreshCPU( int cpus)
             QList<QPointF> points = cpuseries->points();
 
             for ( int j = 0; j< cpuseries->count(); ++j) {
-                int newSec = -1*(j-cpuseries->count());
+                //int newSec = -1*(j-cpuseries->count());
                 QPointF point = points.at(j);
                 //qDebug() << j << newSec;// << point.y();
                 reversal->append(-1*(j-cpuseries->count()),point.y());
@@ -172,5 +172,11 @@ void MainWindow::ExitWindow()
 void MainWindow::on_actionExit_triggered()
 {
     close();
+}
+
+
+void MainWindow::on_horizontalSlider_actionTriggered(int action)
+{
+    //ui->Frequency->setText(QString::number(ui->horizontalSlider->setTickPosition()))
 }
 

@@ -218,7 +218,7 @@ border-color: rgb(255, 0, 0);</string>
     <widget class="QSpinBox" name="spinBox">
      <property name="geometry">
       <rect>
-       <x>320</x>
+       <x>290</x>
        <y>30</y>
        <width>45</width>
        <height>29</height>
@@ -230,12 +230,34 @@ border-color: rgb(255, 0, 0);</string>
       <rect>
        <x>30</x>
        <y>30</y>
-       <width>160</width>
+       <width>171</width>
        <height>18</height>
       </rect>
      </property>
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>100</number>
+     </property>
+     <property name="singleStep">
+      <number>1</number>
+     </property>
      <property name="orientation">
       <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Frequency">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>30</y>
+       <width>67</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
      </property>
     </widget>
    </widget>
@@ -295,7 +317,7 @@ border-color: rgb(255, 0, 0);</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

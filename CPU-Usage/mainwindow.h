@@ -31,12 +31,15 @@ public:
     void clearLayout(QLayout *layout);
     void addtoChart(QLineSeries *series);
     QLineSeries *cpuseries = new QLineSeries();
+    double monitorFreq = 5;
 
 private slots:
     void ExitWindow();
 
 
     void on_actionExit_triggered();
+
+    void on_horizontalSlider_actionTriggered(int action);
 
 private:
     Ui::MainWindow *ui;
