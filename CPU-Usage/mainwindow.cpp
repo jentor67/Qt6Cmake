@@ -9,7 +9,6 @@
 
 
 
-
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -56,25 +55,21 @@ MainWindow::MainWindow(QWidget *parent)
     memTimer->start(1000);
 
 
-    QChart *chart1 = new QChart();
-    QLineSeries *series1 = new QLineSeries();
-    series1->append(0, 6);
-    series1->append(2, 4);
-    series1->append(3, 8);
-    series1->append(7, 4);
-    series1->append(10, 5);
-    chart1->addSeries(series1);
-    chart1->setTitle("1st Simple Line Chart");
-    chart1->createDefaultAxes();
-    ui->graphicsView->setChart(chart1);
-
-    //ui->graphicsView_1->setChart(chart1);
-
-    // get values of CPU and place on window
-   // MainWindow::refreshCPU(cpus);
 }
 
 
+void MainWindow::addtoChart(QLineSeries *series)
+{
+    QChart *chart1 = new QChart();
+    chart1->addSeries(series);
+    QValueAxis *axisX = new QValueAxis();
+    axisX->setRange(0,60);
+    chart1->addAxis(axisX, Qt::AlignBottom);
+    series->attachAxis(axisX);
+    chart1->setTitle("1st Simple Line Chart");
+    chart1->createDefaultAxes();
+    ui->graphicsView->setChart(chart1);
+}
 
 void MainWindow::clearLayout(QLayout *layout) {
     if (!layout)
@@ -97,8 +92,8 @@ void MainWindow::clearLayout(QLayout *layout) {
 void MainWindow::refreshCPU( int cpus)
 {
     QString command;
-    //qDebug() << "Hello John"; // << process.errorString();
 
+    QLineSeries *reversal = new QLineSeries();
     // clear layouts
     clearLayout(ui->VerticalCore);
     clearLayout(ui->VerticalLoad);
@@ -111,6 +106,17 @@ void MainWindow::refreshCPU( int cpus)
         QString strNumber = QString::number(i);
         command =  str1 + strNumber + str2;
         QString strLoad = processBash(command).trimmed();
+        if( i == 0 ){
+            cpuseries->append(cpuseries->count(),strLoad.toFloat(0));
+            QList<QPointF> points = cpuseries->points();
+
+            for ( int j = 0; j< cpuseries->count(); ++j) {
+                int newSec = -1*(j-cpuseries->count());
+                QPointF point = points.at(j);
+                //qDebug() << j << newSec;// << point.y();
+                reversal->append(-1*(j-cpuseries->count()),point.y());
+            }
+        }
 
         QLabel *labelNumber =  new QLabel();
         labelNumber->setText(strNumber);
@@ -125,6 +131,11 @@ void MainWindow::refreshCPU( int cpus)
     }
     ui->VerticalCore->addStretch();
     ui->VerticalLoad->addStretch();
+
+
+
+    //addtoChart(cpuseries);
+    addtoChart(reversal);
 }
 
 

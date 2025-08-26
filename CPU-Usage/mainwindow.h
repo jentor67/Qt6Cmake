@@ -29,6 +29,8 @@ public:
     QString processBash(QString command);
     void refreshCPU(int cpus);
     void clearLayout(QLayout *layout);
+    void addtoChart(QLineSeries *series);
+    QLineSeries *cpuseries = new QLineSeries();
 
 private slots:
     void ExitWindow();
