@@ -31,8 +31,9 @@ public:
     void clearLayout(QLayout *layout);
     void addtoChart(QLineSeries *series);
     QLineSeries *cpuseries = new QLineSeries();
-    double monitorFreq = 5;
+    double monitorFreq = 0.25;
     void updateValueDisplay(int value);
+    int cpus;
 
 private slots:
     void ExitWindow();

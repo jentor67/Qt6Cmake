@@ -5,6 +5,7 @@
 #include "MyButton.h"
 #include "QTimer"
 #include "QChar"
+#include "QtMath"
 //#include "QCh
 
 
@@ -42,7 +43,9 @@ MainWindow::MainWindow(QWidget *parent)
     // Get the number of CPU's
     command = "lscpu | grep \"^CPU(s):\" | awk '{print $2}'";
 
-    int cpus =  processBash(command).trimmed().toInt();  //remove \n and convert to integer
+    //int cpus =  processBash(command).trimmed().toInt();  //remove \n and convert to integer
+
+    cpus =  processBash(command).trimmed().toInt();  //remove \n and convert to integer
 
     // place value on label
     ui->lblCPUSValue->setText(QString::number(cpus));
@@ -50,9 +53,10 @@ MainWindow::MainWindow(QWidget *parent)
     // create connection for cpuRefreshButton
     //connect(ui->cpuRefreshButton, &QPushButton::clicked, this, [=]() {refreshCPU(cpus);});  //this works
 
-    QTimer *memTimer = new QTimer(this);
-    connect(memTimer, &QTimer::timeout, this, [=]() {refreshCPU(cpus);});
-    memTimer->start(1000/monitorFreq);
+//     QTimer *memTimer = new QTimer(this);
+//     connect(memTimer, &QTimer::timeout, this, [=]() {refreshCPU(cpus);});
+// //    memTimer->start(1000/monitorFreq);
+//     memTimer->start(1000/MainWindow::monitorFreq);
 
 
     QObject::connect(ui->horizontalSlider, &QSlider::valueChanged, this, [this](int value) {
@@ -67,11 +71,19 @@ void MainWindow::updateValueDisplay(int value)
 {
     // The `value` argument is the result of the slider's `valueChanged` signal.
     // Perform any custom logic here, such as adding it to another result.
-    int someOtherValue = 10;
-    int totalResult = value + someOtherValue;
-    qDebug() << "Hello";
-    // Display the final result in the label.
-    ui->Frequency->setText(QString::number(totalResult));
+    float A = .25;
+    float t = qLn(20)/100;
+    float result = A*qExp(t*value);
+    ui->Frequency->setText(QString::number(result));
+    MainWindow::monitorFreq = result;
+
+    QTimer *memTimer = new QTimer(this);
+    memTimer->start(1000/MainWindow::monitorFreq);
+    connect(memTimer, &QTimer::timeout, this, [=]() {refreshCPU(cpus);});
+    //    memTimer->start(1000/monitorFreq);
+
+    qDebug() << MainWindow::monitorFreq << " - " << memTimer;
+
 }
 
 
