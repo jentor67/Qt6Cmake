@@ -32,6 +32,7 @@ public:
     void addtoChart(QLineSeries *series);
     QLineSeries *cpuseries = new QLineSeries();
     double monitorFreq = 5;
+    void updateValueDisplay(int value);
 
 private slots:
     void ExitWindow();

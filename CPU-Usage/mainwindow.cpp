@@ -55,6 +55,23 @@ MainWindow::MainWindow(QWidget *parent)
     memTimer->start(1000/monitorFreq);
 
 
+    QObject::connect(ui->horizontalSlider, &QSlider::valueChanged, this, [this](int value) {
+        // Here, the lambda captures the `this` pointer to access the object's members.
+        // It takes the slider's 'value' and passes it to your custom slot function.
+        this->updateValueDisplay(value);
+    });
+}
+
+// *** Your custom slot function ***
+void MainWindow::updateValueDisplay(int value)
+{
+    // The `value` argument is the result of the slider's `valueChanged` signal.
+    // Perform any custom logic here, such as adding it to another result.
+    int someOtherValue = 10;
+    int totalResult = value + someOtherValue;
+    qDebug() << "Hello";
+    // Display the final result in the label.
+    ui->Frequency->setText(QString::number(totalResult));
 }
 
 
@@ -177,6 +194,6 @@ void MainWindow::on_actionExit_triggered()
 
 void MainWindow::on_horizontalSlider_actionTriggered(int action)
 {
-    //ui->Frequency->setText(QString::number(ui->horizontalSlider->setTickPosition()))
+    //ui->Frequency->setText(ui->horizontalSlider->setTickPosition())
 }
 
