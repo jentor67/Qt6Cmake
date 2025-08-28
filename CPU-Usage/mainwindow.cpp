@@ -6,8 +6,8 @@
 #include "QTimer"
 #include "QChar"
 #include "QtMath"
-//#include "QCh
-
+#include "QList"
+#include "cpucores.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -43,49 +43,43 @@ MainWindow::MainWindow(QWidget *parent)
     // Get the number of CPU's
     command = "lscpu | grep \"^CPU(s):\" | awk '{print $2}'";
 
-    //int cpus =  processBash(command).trimmed().toInt();  //remove \n and convert to integer
-
     cpus =  processBash(command).trimmed().toInt();  //remove \n and convert to integer
+
+
+    // Create a QList of Person objects
+    QList<cpucores> CpuCoreValues;
+
+
+    // // Create a QList of Person objects
+    // QList<Person> people;
+
+    // // Add objects using the push_back() or append() method
+    // people.append(Person("Alice", 30));
+    // people.append(Person("Bob", 25));
+    // people.append(Person("Charlie", 35));
+
+    // // Assign a new object to an existing element by index
+    // people[1] = Person("David", 40);
+
+    // // Iterate and print the contents
+    // qDebug() << "List of people:";
+    // for (const Person& person : people) {
+    //     qDebug() << "Name:" << person.name() << ", Age:" << person.age();
+    // }
+
+
+
 
     // place value on label
     ui->lblCPUSValue->setText(QString::number(cpus));
 
-    // create connection for cpuRefreshButton
-    //connect(ui->cpuRefreshButton, &QPushButton::clicked, this, [=]() {refreshCPU(cpus);});  //this works
-
-//     QTimer *memTimer = new QTimer(this);
-//     connect(memTimer, &QTimer::timeout, this, [=]() {refreshCPU(cpus);});
-// //    memTimer->start(1000/monitorFreq);
-//     memTimer->start(1000/MainWindow::monitorFreq);
-
-
-    QObject::connect(ui->horizontalSlider, &QSlider::valueChanged, this, [this](int value) {
-        // Here, the lambda captures the `this` pointer to access the object's members.
-        // It takes the slider's 'value' and passes it to your custom slot function.
-        this->updateValueDisplay(value);
-    });
-}
-
-// *** Your custom slot function ***
-void MainWindow::updateValueDisplay(int value)
-{
-    // The `value` argument is the result of the slider's `valueChanged` signal.
-    // Perform any custom logic here, such as adding it to another result.
-    float A = .25;
-    float t = qLn(20)/100;
-    float result = A*qExp(t*value);
-    ui->Frequency->setText(QString::number(result));
-    MainWindow::monitorFreq = result;
 
     QTimer *memTimer = new QTimer(this);
-    memTimer->start(1000/MainWindow::monitorFreq);
     connect(memTimer, &QTimer::timeout, this, [=]() {refreshCPU(cpus);});
-    //    memTimer->start(1000/monitorFreq);
+    memTimer->start(1000/MainWindow::monitorFreq);
 
-    qDebug() << MainWindow::monitorFreq << " - " << memTimer;
 
 }
-
 
 void MainWindow::addtoChart(QLineSeries *series)
 {
@@ -140,9 +134,7 @@ void MainWindow::refreshCPU( int cpus)
             QList<QPointF> points = cpuseries->points();
 
             for ( int j = 0; j< cpuseries->count(); ++j) {
-                //int newSec = -1*(j-cpuseries->count());
                 QPointF point = points.at(j);
-                //qDebug() << j << newSec;// << point.y();
                 reversal->append(-1*(j-cpuseries->count()),point.y());
             }
         }
@@ -160,8 +152,6 @@ void MainWindow::refreshCPU( int cpus)
     }
     ui->VerticalCore->addStretch();
     ui->VerticalLoad->addStretch();
-
-
 
     //addtoChart(cpuseries);
     addtoChart(reversal);
