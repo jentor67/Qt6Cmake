@@ -47,26 +47,19 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     // Create a QList of Person objects
-    QList<cpucores> CpuCoreValues;
+    QList<CPUCores*> CpuCoreValues;
+    // Create Person objects and add them to the list
+    CpuCoreValues.append(new CPUCores("Alice", 30));
+    CpuCoreValues.append(new CPUCores("Bob", 45));
+    CpuCoreValues.append(new CPUCores("Charlie", 25));
 
+    // Iterate over the list and print person details
+    for (const CPUCores *person : qAsConst(CpuCoreValues)) {
+        qDebug() << "Name:" << person->name() << ", Age:" << person->age();
+    }
 
-    // // Create a QList of Person objects
-    // QList<Person> people;
-
-    // // Add objects using the push_back() or append() method
-    // people.append(Person("Alice", 30));
-    // people.append(Person("Bob", 25));
-    // people.append(Person("Charlie", 35));
-
-    // // Assign a new object to an existing element by index
-    // people[1] = Person("David", 40);
-
-    // // Iterate and print the contents
-    // qDebug() << "List of people:";
-    // for (const Person& person : people) {
-    //     qDebug() << "Name:" << person.name() << ", Age:" << person.age();
-    // }
-
+    // Clean up memory
+    qDeleteAll(CpuCoreValues);
 
 
 
@@ -77,7 +70,6 @@ MainWindow::MainWindow(QWidget *parent)
     QTimer *memTimer = new QTimer(this);
     connect(memTimer, &QTimer::timeout, this, [=]() {refreshCPU(cpus);});
     memTimer->start(1000/MainWindow::monitorFreq);
-
 
 }
 
