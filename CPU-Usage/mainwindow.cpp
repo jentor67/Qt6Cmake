@@ -7,7 +7,6 @@
 #include "QChar"
 #include "QtMath"
 #include "QList"
-#include "cpucores.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -44,24 +43,6 @@ MainWindow::MainWindow(QWidget *parent)
     command = "lscpu | grep \"^CPU(s):\" | awk '{print $2}'";
 
     cpus =  processBash(command).trimmed().toInt();  //remove \n and convert to integer
-
-
-    // Create a QList of Person objects
-    QList<CPUCores*> CpuCoreValues;
-    // Create Person objects and add them to the list
-    CpuCoreValues.append(new CPUCores("Alice", 30));
-    CpuCoreValues.append(new CPUCores("Bob", 45));
-    CpuCoreValues.append(new CPUCores("Charlie", 25));
-
-    // Iterate over the list and print person details
-    for (const CPUCores *person : qAsConst(CpuCoreValues)) {
-        qDebug() << "Name:" << person->name() << ", Age:" << person->age();
-    }
-
-    // Clean up memory
-    qDeleteAll(CpuCoreValues);
-
-
 
     // place value on label
     ui->lblCPUSValue->setText(QString::number(cpus));
@@ -108,7 +89,7 @@ void MainWindow::refreshCPU( int cpus)
 {
     QString command;
 
-    QLineSeries *reversal = new QLineSeries();
+
     // clear layouts
     clearLayout(ui->VerticalCore);
     clearLayout(ui->VerticalLoad);
@@ -117,19 +98,31 @@ void MainWindow::refreshCPU( int cpus)
     QString str1 = "echo 100 - $(mpstat -P ";
     QString str2 = " | tail -1 | awk \'{print $13}\') | bc";
 
+    //CPUCoreList.clear();
     for ( int i = 0 ; i < cpus; ++i) {
+
+        // need to append the last value to the QLineSeries and
+        // replace all others with the previous value
+        // replace first value with the newest value
+
+        // reset reversal
+        QLineSeries *reversal = new QLineSeries();
+
+        // latest value of the core
         QString strNumber = QString::number(i);
         command =  str1 + strNumber + str2;
         QString strLoad = processBash(command).trimmed();
-        if( i == 0 ){
-            cpuseries->append(cpuseries->count(),strLoad.toFloat(0));
-            QList<QPointF> points = cpuseries->points();
 
-            for ( int j = 0; j< cpuseries->count(); ++j) {
-                QPointF point = points.at(j);
-                reversal->append(-1*(j-cpuseries->count()),point.y());
-            }
+
+        cpuseries->append(cpuseries->count(),strLoad.toFloat(0));
+        QList<QPointF> points = cpuseries->points();
+
+        for ( int j = 0; j< cpuseries->count(); ++j) {
+            QPointF point = points.at(j);
+            reversal->append(-1*(j-cpuseries->count()),point.y());
         }
+
+        CPUCoreList.insert(reversal);
 
         QLabel *labelNumber =  new QLabel();
         labelNumber->setText(strNumber);
@@ -142,11 +135,19 @@ void MainWindow::refreshCPU( int cpus)
         ui->VerticalLoad->addWidget(labelLoad);
 
     }
+    qDebug() << "the CPUCoreList size: " <<  sizeof(CPUCoreList);
+    // Range-based for loop (preferred in C++11+)
+    for (const auto &item : CPUCoreList) {
+        for (const QPointF &p : item->points()) {
+            qDebug() << "x =" << p.x() << "y =" << p.y();
+        }
+        qDebug() <<"Break";
+    }
     ui->VerticalCore->addStretch();
     ui->VerticalLoad->addStretch();
 
     //addtoChart(cpuseries);
-    addtoChart(reversal);
+    //addtoChart(reversal);
 }
 
 

@@ -35,7 +35,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         mycustomstyle.h
         mycustomstyle.cpp
         mywidget.h mywidget.cpp
-        cpucores.h cpucores.cpp
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET CPU-Usage APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
