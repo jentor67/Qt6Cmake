@@ -47,6 +47,11 @@ MainWindow::MainWindow(QWidget *parent)
     // place value on label
     ui->lblCPUSValue->setText(QString::number(cpus));
 
+    for ( int i = 0 ; i < cpus; ++i) {
+        QLineSeries *cpuseries = new QLineSeries();
+        CPUCoreList.insert(cpuseries);
+    }
+
 
     QTimer *memTimer = new QTimer(this);
     connect(memTimer, &QTimer::timeout, this, [=]() {refreshCPU(cpus);});
@@ -106,7 +111,7 @@ void MainWindow::refreshCPU( int cpus)
         // replace first value with the newest value
 
         // reset reversal
-        QLineSeries *reversal = new QLineSeries();
+        // QLineSeries *reversal = new QLineSeries();
 
         // latest value of the core
         QString strNumber = QString::number(i);
@@ -114,28 +119,32 @@ void MainWindow::refreshCPU( int cpus)
         QString strLoad = processBash(command).trimmed();
 
 
-        cpuseries->append(cpuseries->count(),strLoad.toFloat(0));
-        QList<QPointF> points = cpuseries->points();
+        // cpuseries->append(cpuseries->count(),strLoad.toFloat(0));
+        CPUCoreList.insert(cpuseries.append(cpuseries->count(),strLoad.toFloat(0)));
+        // QList<QPointF> points = cpuseries->points();
 
-        for ( int j = 0; j< cpuseries->count(); ++j) {
-            QPointF point = points.at(j);
-            reversal->append(-1*(j-cpuseries->count()),point.y());
-        }
+        // for ( int j = 0; j< cpuseries->count(); ++j) {
+        //     QPointF point = points.at(j);
+        //     reversal->append(-1*(j-cpuseries->count()),point.y());
+        // }
 
-        CPUCoreList.insert(reversal);
+        // CPUCoreList.insert(reversal);
 
+
+        // add to VerticalCore
         QLabel *labelNumber =  new QLabel();
         labelNumber->setText(strNumber);
         labelNumber->setIndent(20);
         ui->VerticalCore->addWidget(labelNumber);
 
+        // add to VerticalLoad
         QLabel *labelLoad = new QLabel();
         labelLoad->setText(strLoad);
         labelLoad->setIndent(20);
         ui->VerticalLoad->addWidget(labelLoad);
 
     }
-    qDebug() << "the CPUCoreList size: " <<  sizeof(CPUCoreList);
+    qDebug() << "the CPUCoreList size: " << CPUCoreList.size(); // << " " << sizeof(CPUCoreList);
     // Range-based for loop (preferred in C++11+)
     for (const auto &item : CPUCoreList) {
         for (const QPointF &p : item->points()) {
