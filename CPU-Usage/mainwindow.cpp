@@ -60,21 +60,21 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
-    QQueue<QStack<float>> q1;
-    for ( int i = 0 ; i < 5; ++i) {
+    for ( int i = 0 ; i < cpus; ++i) {
         QStack<float> s1;
         for ( int j = 0; j < 5; j++){
             s1.push((j+1)*(i+1)*.45);
 
         }
-        q1.enqueue(s1);
+        CPUCoreQueue.enqueue(s1);
     }
-    while (!q1.isEmpty()){
-        QStack<float> s2;
-        s2 = q1.dequeue() ; //<< endl;
-        while (!s2.isEmpty())
-            qDebug() << s2.pop(); // << Qt::endl;
-    }
+
+    // while (!CPUCoreQueue.isEmpty()){
+    //     QStack<float> s2;
+    //     s2 = CPUCoreQueue.dequeue();
+    //     while (!s2.isEmpty())
+    //         qDebug() << s2.pop(); // << Qt::endl;
+    // }
 }
 
 void MainWindow::addtoChart(QLineSeries *series)
@@ -122,8 +122,14 @@ void MainWindow::refreshCPU( int cpus)
     QString str2 = " | tail -1 | awk \'{print $13}\') | bc";
 
     //CPUCoreList.clear();
-    for ( int i = 0 ; i < cpus; ++i) {
-
+    //for ( int i = 0 ; i < cpus; ++i) {
+    int i = 0;
+    //CPUCoreQueue.head(); // not working
+    //CPUCoreQueue.begin();
+    while (!CPUCoreQueue.isEmpty()){
+        qDebug() << i;
+        QStack<float> s2;
+        s2 = CPUCoreQueue.dequeue();
         // need to append the last value to the QLineSeries and
         // replace all others with the previous value
         // replace first value with the newest value
@@ -160,6 +166,7 @@ void MainWindow::refreshCPU( int cpus)
         labelLoad->setText(strLoad);
         labelLoad->setIndent(20);
         ui->VerticalLoad->addWidget(labelLoad);
+        i = i+1;
 
     }
     //qDebug() << "the CPUCoreList size: " << CPUCoreList.size(); // << " " << sizeof(CPUCoreList);

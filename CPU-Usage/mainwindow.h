@@ -32,6 +32,7 @@ public:
     void addtoChart(QLineSeries *series);
     QLineSeries *cpuseries = new QLineSeries();
     QSet<QLineSeries*> CPUCoreList;
+    QQueue<QStack<float>> CPUCoreQueue;
     //QSet<QString> CPUCoreList
     double monitorFreq = 1;
     int cpus;
