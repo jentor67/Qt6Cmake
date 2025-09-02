@@ -7,6 +7,7 @@
 #include "QChar"
 #include "QtMath"
 #include "QList"
+#include "QStack"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -57,6 +58,23 @@ MainWindow::MainWindow(QWidget *parent)
     connect(memTimer, &QTimer::timeout, this, [=]() {refreshCPU(cpus);});
     memTimer->start(1000/MainWindow::monitorFreq);
 
+
+
+    QQueue<QStack<float>> q1;
+    for ( int i = 0 ; i < 5; ++i) {
+        QStack<float> s1;
+        for ( int j = 0; j < 5; j++){
+            s1.push((j+1)*(i+1)*.45);
+
+        }
+        q1.enqueue(s1);
+    }
+    while (!q1.isEmpty()){
+        QStack<float> s2;
+        s2 = q1.dequeue() ; //<< endl;
+        while (!s2.isEmpty())
+            qDebug() << s2.pop(); // << Qt::endl;
+    }
 }
 
 void MainWindow::addtoChart(QLineSeries *series)
@@ -120,7 +138,7 @@ void MainWindow::refreshCPU( int cpus)
 
 
         // cpuseries->append(cpuseries->count(),strLoad.toFloat(0));
-        CPUCoreList.insert(cpuseries.append(cpuseries->count(),strLoad.toFloat(0)));
+       // CPUCoreList.insert(cpuseries.append(cpuseries->count(),strLoad.toFloat(0)));
         // QList<QPointF> points = cpuseries->points();
 
         // for ( int j = 0; j< cpuseries->count(); ++j) {
@@ -144,14 +162,14 @@ void MainWindow::refreshCPU( int cpus)
         ui->VerticalLoad->addWidget(labelLoad);
 
     }
-    qDebug() << "the CPUCoreList size: " << CPUCoreList.size(); // << " " << sizeof(CPUCoreList);
+    //qDebug() << "the CPUCoreList size: " << CPUCoreList.size(); // << " " << sizeof(CPUCoreList);
     // Range-based for loop (preferred in C++11+)
-    for (const auto &item : CPUCoreList) {
-        for (const QPointF &p : item->points()) {
-            qDebug() << "x =" << p.x() << "y =" << p.y();
-        }
-        qDebug() <<"Break";
-    }
+    // for (const auto &item : CPUCoreList) {
+    //     for (const QPointF &p : item->points()) {
+    //         qDebug() << "x =" << p.x() << "y =" << p.y();
+    //     }
+    //     qDebug() <<"Break";
+    // }
     ui->VerticalCore->addStretch();
     ui->VerticalLoad->addStretch();
 
