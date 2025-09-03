@@ -62,18 +62,16 @@ MainWindow::MainWindow(QWidget *parent)
 
     for ( int i = 0 ; i < cpus; ++i) {
         QStack<float> s1;
-        for ( int j = 0; j < 5; j++){
-            s1.push((j+1)*(i+1)*.45);
+        // for ( int j = 0; j < 5; j++){
+        //     s1.push((j+1)*(i+1)*.45);
 
-        }
+        // }
         CPUCoreQueue.enqueue(s1);
     }
 
-    // while (!CPUCoreQueue.isEmpty()){
-    //     QStack<float> s2;
-    //     s2 = CPUCoreQueue.dequeue();
-    //     while (!s2.isEmpty())
-    //         qDebug() << s2.pop(); // << Qt::endl;
+    // for (QStack<float> value: CPUCoreQueue){
+    //     while (!value.isEmpty())
+    //         qDebug() << "Hello: " << value.pop(); // << Qt::endl;
     // }
 }
 
@@ -112,7 +110,6 @@ void MainWindow::refreshCPU( int cpus)
 {
     QString command;
 
-
     // clear layouts
     clearLayout(ui->VerticalCore);
     clearLayout(ui->VerticalLoad);
@@ -121,26 +118,32 @@ void MainWindow::refreshCPU( int cpus)
     QString str1 = "echo 100 - $(mpstat -P ";
     QString str2 = " | tail -1 | awk \'{print $13}\') | bc";
 
-    //CPUCoreList.clear();
-    //for ( int i = 0 ; i < cpus; ++i) {
     int i = 0;
-    //CPUCoreQueue.head(); // not working
-    //CPUCoreQueue.begin();
-    while (!CPUCoreQueue.isEmpty()){
-        qDebug() << i;
-        QStack<float> s2;
-        s2 = CPUCoreQueue.dequeue();
+    qDebug() << "Time lapse";
+    for ( QStack<float> cpuCoreValue: CPUCoreQueue){
         // need to append the last value to the QLineSeries and
         // replace all others with the previous value
         // replace first value with the newest value
-
-        // reset reversal
-        // QLineSeries *reversal = new QLineSeries();
 
         // latest value of the core
         QString strNumber = QString::number(i);
         command =  str1 + strNumber + str2;
         QString strLoad = processBash(command).trimmed();
+
+        cpuCoreValue.push(strLoad.toFloat(0));
+        CPUCoreQueue.replace(i,cpuCoreValue);
+
+
+        qDebug() << "Core:";
+        //int tsec = 0;
+        QLineSeries *cpuseries = new QLineSeries();
+        for (int tsec = 0; tsec < cpuCoreValue.size(); ++tsec) {
+            cpuseries->append(tsec,cpuCoreValue[tsec]);
+            //qDebug() << "Time: " << tsec << " Load: " << cpuCoreValue.pop();
+        }
+        addtoChart(cpuseries);
+
+
 
 
         // cpuseries->append(cpuseries->count(),strLoad.toFloat(0));
@@ -169,14 +172,7 @@ void MainWindow::refreshCPU( int cpus)
         i = i+1;
 
     }
-    //qDebug() << "the CPUCoreList size: " << CPUCoreList.size(); // << " " << sizeof(CPUCoreList);
-    // Range-based for loop (preferred in C++11+)
-    // for (const auto &item : CPUCoreList) {
-    //     for (const QPointF &p : item->points()) {
-    //         qDebug() << "x =" << p.x() << "y =" << p.y();
-    //     }
-    //     qDebug() <<"Break";
-    // }
+
     ui->VerticalCore->addStretch();
     ui->VerticalLoad->addStretch();
 
