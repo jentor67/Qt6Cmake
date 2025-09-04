@@ -75,10 +75,51 @@ MainWindow::MainWindow(QWidget *parent)
     // }
 }
 
+void MainWindow::addtoChartMulti(QQueue<QStack<float>> ccq)
+{
+    QChart *chart1 = new QChart();
+
+    int corei = 0;
+    for ( QStack<float> cpuCoreValue: ccq){
+
+        QLineSeries *cpuseries0 = new QLineSeries();
+        QLineSeries *cpuseries1 = new QLineSeries();
+        QLineSeries *cpuseries2 = new QLineSeries();
+        QLineSeries *cpuseries3 = new QLineSeries();
+        for (int tsec = 0; tsec < cpuCoreValue.size(); ++tsec) {
+            if( corei == 0 ) cpuseries0->append(tsec,cpuCoreValue[tsec]);
+            if( corei == 1 ) cpuseries1->append(tsec,cpuCoreValue[tsec]);
+            if( corei == 2 ) cpuseries2->append(tsec,cpuCoreValue[tsec]);
+            if( corei == 3 ) cpuseries3->append(tsec,cpuCoreValue[tsec]);
+        }
+        if( corei == 0 )  chart1->addSeries(cpuseries0);
+        if( corei == 1 )  chart1->addSeries(cpuseries1);
+        if( corei == 2 )  chart1->addSeries(cpuseries2);
+        if( corei == 3 )  chart1->addSeries(cpuseries3);
+        corei = corei + 1;
+    }
+
+    //chart1->addSeries(series);
+    // QLineSeries *s1;
+    // s1 = series;
+    // chart1->addSeries(s1);
+    QValueAxis *axisX = new QValueAxis();
+    axisX->setRange(0,60);
+    chart1->addAxis(axisX, Qt::AlignBottom);
+    //cpuseries->attachAxis(axisX);
+    chart1->setTitle("1st Simple Line Chart");
+    chart1->createDefaultAxes();
+    ui->graphicsView->setChart(chart1);
+}
+
 void MainWindow::addtoChart(QLineSeries *series)
 {
     QChart *chart1 = new QChart();
+
     chart1->addSeries(series);
+    // QLineSeries *s1;
+    // s1 = series;
+    // chart1->addSeries(s1);
     QValueAxis *axisX = new QValueAxis();
     axisX->setRange(0,60);
     chart1->addAxis(axisX, Qt::AlignBottom);
@@ -119,7 +160,7 @@ void MainWindow::refreshCPU( int cpus)
     QString str2 = " | tail -1 | awk \'{print $13}\') | bc";
 
     int i = 0;
-    qDebug() << "Time lapse";
+    //qDebug() << "Time lapse";
     for ( QStack<float> cpuCoreValue: CPUCoreQueue){
         // need to append the last value to the QLineSeries and
         // replace all others with the previous value
@@ -134,28 +175,14 @@ void MainWindow::refreshCPU( int cpus)
         CPUCoreQueue.replace(i,cpuCoreValue);
 
 
-        qDebug() << "Core:";
+        //qDebug() << "Core: " << i << " Size: " << cpuCoreValue.size();
         //int tsec = 0;
         QLineSeries *cpuseries = new QLineSeries();
         for (int tsec = 0; tsec < cpuCoreValue.size(); ++tsec) {
             cpuseries->append(tsec,cpuCoreValue[tsec]);
-            //qDebug() << "Time: " << tsec << " Load: " << cpuCoreValue.pop();
+            //qDebug() << "Time: " << tsec << " Load: " << cpuCoreValue[tsec];
         }
-        addtoChart(cpuseries);
-
-
-
-
-        // cpuseries->append(cpuseries->count(),strLoad.toFloat(0));
-       // CPUCoreList.insert(cpuseries.append(cpuseries->count(),strLoad.toFloat(0)));
-        // QList<QPointF> points = cpuseries->points();
-
-        // for ( int j = 0; j< cpuseries->count(); ++j) {
-        //     QPointF point = points.at(j);
-        //     reversal->append(-1*(j-cpuseries->count()),point.y());
-        // }
-
-        // CPUCoreList.insert(reversal);
+        //addtoChart(cpuseries);
 
 
         // add to VerticalCore
@@ -176,6 +203,7 @@ void MainWindow::refreshCPU( int cpus)
     ui->VerticalCore->addStretch();
     ui->VerticalLoad->addStretch();
 
+    addtoChartMulti(CPUCoreQueue);
     //addtoChart(cpuseries);
     //addtoChart(reversal);
 }

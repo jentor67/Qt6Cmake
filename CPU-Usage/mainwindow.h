@@ -29,6 +29,7 @@ public:
     QString processBash(QString command);
     void refreshCPU(int cpus);
     void clearLayout(QLayout *layout);
+    void addtoChartMulti(QQueue<QStack<float>> ccq);
     void addtoChart(QLineSeries *series);
     QLineSeries *cpuseries = new QLineSeries();
     QSet<QLineSeries*> CPUCoreList;
