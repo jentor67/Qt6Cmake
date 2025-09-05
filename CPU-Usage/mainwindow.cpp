@@ -80,17 +80,18 @@ void MainWindow::addtoChartMulti(QQueue<QStack<float>> ccq)
     QChart *chart1 = new QChart();
 
     int corei = 0;
+    QLineSeries *cpuseries0 = new QLineSeries();
+    QLineSeries *cpuseries1 = new QLineSeries();
+    QLineSeries *cpuseries2 = new QLineSeries();
+    QLineSeries *cpuseries3 = new QLineSeries();
+
     for ( QStack<float> cpuCoreValue: ccq){
 
-        QLineSeries *cpuseries0 = new QLineSeries();
-        QLineSeries *cpuseries1 = new QLineSeries();
-        QLineSeries *cpuseries2 = new QLineSeries();
-        QLineSeries *cpuseries3 = new QLineSeries();
-        for (int tsec = 0; tsec < cpuCoreValue.size(); ++tsec) {
-            if( corei == 0 ) cpuseries0->append(tsec,cpuCoreValue[tsec]);
-            if( corei == 1 ) cpuseries1->append(tsec,cpuCoreValue[tsec]);
-            if( corei == 2 ) cpuseries2->append(tsec,cpuCoreValue[tsec]);
-            if( corei == 3 ) cpuseries3->append(tsec,cpuCoreValue[tsec]);
+        for (int tsec = 0 ;  tsec < cpuCoreValue.size(); ++tsec) {
+            if( corei == 0 ) cpuseries0->append(tsec,cpuCoreValue[cpuCoreValue.size() - tsec -1]);
+            if( corei == 1 ) cpuseries1->append(tsec,cpuCoreValue[cpuCoreValue.size() - tsec -1]);
+            if( corei == 2 ) cpuseries2->append(tsec,cpuCoreValue[cpuCoreValue.size() - tsec -1]);
+            if( corei == 3 ) cpuseries3->append(tsec,cpuCoreValue[cpuCoreValue.size() - tsec -1]);
         }
         if( corei == 0 )  chart1->addSeries(cpuseries0);
         if( corei == 1 )  chart1->addSeries(cpuseries1);
@@ -99,15 +100,21 @@ void MainWindow::addtoChartMulti(QQueue<QStack<float>> ccq)
         corei = corei + 1;
     }
 
-    //chart1->addSeries(series);
-    // QLineSeries *s1;
-    // s1 = series;
-    // chart1->addSeries(s1);
+    // X axis
     QValueAxis *axisX = new QValueAxis();
-    axisX->setRange(0,60);
+    axisX->setTitleText("Seconds");
+    //axisX->setLabelFormat("%i");
     chart1->addAxis(axisX, Qt::AlignBottom);
-    //cpuseries->attachAxis(axisX);
-    chart1->setTitle("1st Simple Line Chart");
+    cpuseries0->attachAxis(axisX);
+
+    // Y axis
+    QValueAxis *axisY = new QValueAxis();
+    axisY->setTitleText("% Load");
+    axisY->setLabelFormat("%i");
+    chart1->addAxis(axisY, Qt::AlignLeft);
+    cpuseries0->attachAxis(axisY);
+
+    chart1->setTitle("Core Load");
     chart1->createDefaultAxes();
     ui->graphicsView->setChart(chart1);
 }

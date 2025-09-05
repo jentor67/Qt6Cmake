@@ -10,6 +10,10 @@
 // #include "QtCore"
 // #include "QtGui"
 #include "QtCharts"
+#include <QtCharts/QChart>
+#include <QtCharts/QLineSeries>
+#include <QtCharts/QValueAxis>
+#include <QtCharts/QChartView>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
