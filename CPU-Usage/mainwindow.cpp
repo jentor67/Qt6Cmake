@@ -103,6 +103,7 @@ void MainWindow::addtoChartMulti(QQueue<QStack<float>> ccq)
     // X axis
     QValueAxis *axisX = new QValueAxis();
     axisX->setTitleText("Seconds");
+    axisX->setRange(0,60);
     //axisX->setLabelFormat("%i");
     chart1->addAxis(axisX, Qt::AlignBottom);
     cpuseries0->attachAxis(axisX);
@@ -115,7 +116,7 @@ void MainWindow::addtoChartMulti(QQueue<QStack<float>> ccq)
     cpuseries0->attachAxis(axisY);
 
     chart1->setTitle("Core Load");
-    chart1->createDefaultAxes();
+    //chart1->createDefaultAxes();
     ui->graphicsView->setChart(chart1);
 }
 
