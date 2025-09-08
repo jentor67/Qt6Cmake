@@ -1,0 +1,19 @@
+# ninja log v6
+2128	2492	1757307213653727972	OpenTextJSONFile	8fa4e03dbec33a4
+17	2128	1757307211542736470	CMakeFiles/OpenTextJSONFile.dir/mainwindow.cpp.o	d4a35a676d004ee5
+657	3380	1757307109577428957	CMakeFiles/OpenTextJSONFile.dir/main.cpp.o	42e2e7e4bc1b69d3
+3	17	1757307211528736527	/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/build/Desktop_Qt_6_9_1-Debug/OpenTextJSONFile_autogen/mocs_compilation.cpp	45ec1f0e7d5422d3
+653	3215	1757307109576255880	CMakeFiles/OpenTextJSONFile.dir/OpenTextJSONFile_autogen/mocs_compilation.cpp.o	d46dabbb152f47c3
+3	17	1757307211528736527	/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/build/Desktop_Qt_6_9_1-Debug/OpenTextJSONFile_autogen/timestamp	45ec1f0e7d5422d3
+3	17	1757307211528736527	OpenTextJSONFile_autogen/mocs_compilation.cpp	45ec1f0e7d5422d3
+3	17	1757307211528736527	OpenTextJSONFile_autogen/timestamp	45ec1f0e7d5422d3
+3	441	1757308637720410269	build.ninja	535a0aa447e4c37a
+3	16	1757308637738262917	OpenTextJSONFile_autogen/timestamp	45ec1f0e7d5422d3
+3	16	1757308637738262917	OpenTextJSONFile_autogen/mocs_compilation.cpp	45ec1f0e7d5422d3
+3	16	1757308637738262917	/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/build/Desktop_Qt_6_9_1-Debug/OpenTextJSONFile_autogen/timestamp	45ec1f0e7d5422d3
+3	16	1757308637738262917	/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/build/Desktop_Qt_6_9_1-Debug/OpenTextJSONFile_autogen/mocs_compilation.cpp	45ec1f0e7d5422d3
+16	27	1757308637761263036	OpenTextJSONFile_autogen/EWIEGA46WW/qrc_resources.cpp	d58d66129cfc8844
+16	27	1757308637761263036	/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/build/Desktop_Qt_6_9_1-Debug/OpenTextJSONFile_autogen/EWIEGA46WW/qrc_resources.cpp	d58d66129cfc8844
+27	71	1757308637763720548	CMakeFiles/OpenTextJSONFile.dir/OpenTextJSONFile_autogen/EWIEGA46WW/qrc_resources.cpp.o	c57a75381f2bc38d
+27	2934	1757308637762263042	CMakeFiles/OpenTextJSONFile.dir/mainwindow.cpp.o	d4a35a676d004ee5
+2934	3643	1757308640669278091	OpenTextJSONFile	fec7c3499f1e4fb8

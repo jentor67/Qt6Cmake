@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-e70df5e7e22ccccf0dad.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "OpenTextJSONFile",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "OpenTextJSONFile::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-OpenTextJSONFile-Debug-074db00bfa8f46f192d9.json",
+					"name" : "OpenTextJSONFile",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "OpenTextJSONFile_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-OpenTextJSONFile_autogen-Debug-5b3e8a17879dfb02cb6c.json",
+					"name" : "OpenTextJSONFile_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "OpenTextJSONFile_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-OpenTextJSONFile_autogen_timestamp_deps-Debug-39358145077530d2be51.json",
+					"name" : "OpenTextJSONFile_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/build/Desktop_Qt_6_9_1-Debug",
+		"source" : "/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

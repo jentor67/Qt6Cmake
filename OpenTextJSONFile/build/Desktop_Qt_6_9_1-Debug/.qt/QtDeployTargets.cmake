@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_OpenTextJSONFile_FILE /home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/build/Desktop_Qt_6_9_1-Debug/OpenTextJSONFile)
+set(__QT_DEPLOY_TARGET_OpenTextJSONFile_TYPE EXECUTABLE)

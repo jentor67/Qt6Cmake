@@ -1,0 +1,38 @@
+{
+	"BUILD_DIR" : "/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/build/Desktop_Qt_6_9_1-Debug/OpenTextJSONFile_autogen",
+	"CMAKE_BINARY_DIR" : "/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/build/Desktop_Qt_6_9_1-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/build/Desktop_Qt_6_9_1-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile",
+	"CMAKE_SOURCE_DIR" : "/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/build/Desktop_Qt_6_9_1-Debug/OpenTextJSONFile_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/Images/Warehouse.png",
+		"/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/data/text/drivelayout.txt",
+		"/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/Images/json2.webp",
+		"/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/Images/json1",
+		"/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/Images/TextFile.png",
+		"/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/Images/jsonfile.jpeg",
+		"/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/data/json/crosstown.json",
+		"/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/data/json/PTI_racks.json",
+		"/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/data/json/data1.json",
+		"/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/data/json/pti_ep.json",
+		"/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/data/json/schema.json",
+		"/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/data/json/test.json",
+		"/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/data/json/data.json",
+		"/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/data/json/test1.json"
+	],
+	"LOCK_FILE" : "/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/build/Desktop_Qt_6_9_1-Debug/CMakeFiles/OpenTextJSONFile_autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "resources" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_resources.cpp",
+	"RCC_EXECUTABLE" : "/opt/Qt/6.9.1/gcc_64/libexec/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/build/Desktop_Qt_6_9_1-Debug/CMakeFiles/OpenTextJSONFile_autogen.dir/AutoRcc_resources_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/jmajor/Git/Qt6Cmake/OpenTextJSONFile/resources.qrc",
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}
