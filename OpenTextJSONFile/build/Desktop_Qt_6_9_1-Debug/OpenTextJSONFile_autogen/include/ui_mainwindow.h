@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
@@ -34,6 +35,9 @@ public:
     QTextEdit *txtJSONBody;
     QLineEdit *txtJSONPath;
     QPushButton *btnPickTextFile;
+    QLabel *lblTextFile;
+    QLabel *lblPic;
+    QLabel *lblJSON;
     QMenuBar *menubar;
     QMenu *menuExit;
     QStatusBar *statusbar;
@@ -69,6 +73,21 @@ public:
         btnPickTextFile->setObjectName("btnPickTextFile");
         btnPickTextFile->setGeometry(QRect(300, 80, 123, 34));
         btnPickTextFile->setFont(font);
+        lblTextFile = new QLabel(centralwidget);
+        lblTextFile->setObjectName("lblTextFile");
+        lblTextFile->setGeometry(QRect(120, 80, 31, 31));
+        lblTextFile->setPixmap(QPixmap(QString::fromUtf8(":/emoji/Images/TextFile.png")));
+        lblTextFile->setScaledContents(true);
+        lblPic = new QLabel(centralwidget);
+        lblPic->setObjectName("lblPic");
+        lblPic->setGeometry(QRect(20, 10, 51, 51));
+        lblPic->setPixmap(QPixmap(QString::fromUtf8(":/logo/Images/Warehouse.png")));
+        lblPic->setScaledContents(true);
+        lblJSON = new QLabel(centralwidget);
+        lblJSON->setObjectName("lblJSON");
+        lblJSON->setGeometry(QRect(120, 310, 31, 31));
+        lblJSON->setPixmap(QPixmap(QString::fromUtf8(":/emoji/Images/json1")));
+        lblJSON->setScaledContents(true);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -94,6 +113,9 @@ public:
         actionExit->setText(QCoreApplication::translate("MainWindow", "Exit", nullptr));
         btnPickJSONFile->setText(QCoreApplication::translate("MainWindow", "Pick JSON File", nullptr));
         btnPickTextFile->setText(QCoreApplication::translate("MainWindow", "Pick Text File", nullptr));
+        lblTextFile->setText(QString());
+        lblPic->setText(QString());
+        lblJSON->setText(QString());
         menuExit->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
     } // retranslateUi
 
